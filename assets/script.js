@@ -11,11 +11,18 @@
 
   var provider = new firebase.auth.GithubAuthProvider();
 
-  provider.setCustomParameters({
+$("#login").on("click", function () {
+    //Open a popup with the FirebaseUI widget.
+//    var signInWithPopup = function() {
+//      window.open(getWidgetUrl(), 'Sign In', 'width=985,height=735');
+//    };
+//    signInWithPopup()
+   provider.setCustomParameters({
     'allow_signup': 'true'
   });
 
-  firebase.auth().signInWithPopup(provider).then(function(result) {
+  console.log(firebase.auth().signInWithRedirect(provider))
+  firebase.auth().signInWithRedirect(provider).then(function(result) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
     var token = result.credential.accessToken;
     // The signed-in user info.
@@ -31,3 +38,53 @@
     var credential = error.credential;
     // ...
   });
+
+//   if (ui.isPendingRedirect()) {
+//     ui.start('#firebaseui-auth-container', uiConfig);
+//   }
+
+
+  initApp = function() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var uid = user.uid;
+        var phoneNumber = user.phoneNumber;
+        var providerData = user.providerData;
+        user.getIdToken().then(function(accessToken) {
+          document.getElementById('sign-in-status').textContent = 'Signed in';
+          document.getElementById('sign-in').textContent = 'Sign out';
+          document.getElementById('account-details').textContent = JSON.stringify({
+            displayName: displayName,
+            email: email,
+            emailVerified: emailVerified,
+            phoneNumber: phoneNumber,
+            photoURL: photoURL,
+            uid: uid,
+            accessToken: accessToken,
+            providerData: providerData
+          }, null, '  ');
+        });
+      } else {
+        // User is signed out.
+        document.getElementById('sign-in-status').textContent = 'Signed out';
+        document.getElementById('sign-in').textContent = 'Sign in';
+        document.getElementById('account-details').textContent = 'null';
+      }
+    }, function(error) {
+      console.log(error);
+    });
+  };
+
+  window.addEventListener('load', function() {
+    initApp()
+  });
+
+
+
+})
+
