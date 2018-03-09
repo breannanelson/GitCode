@@ -22,7 +22,7 @@ $("#login").on("click", function () {
   });
 
   console.log(firebase.auth().signInWithPopup(provider))
-  firebase.auth().signInWithRedirect(provider).then(function(result) {
+  firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
     var token = result.credential.accessToken;
     // The signed-in user info.
