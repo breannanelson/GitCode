@@ -47,7 +47,7 @@ $("#login").on("click", function () {
 //   }
 
 
-
+})
 
   initApp = function() {
     firebase.auth().onAuthStateChanged(function(user) {
@@ -94,7 +94,7 @@ $("#login").on("click", function () {
 
 
 
-})
+
 
 // $("#signOutBTN").on("click", function(){
 //     console.log("Hello")
