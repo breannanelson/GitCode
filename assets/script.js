@@ -26,7 +26,7 @@ $("#login").on("click", function () {
     // ...
 
     $("#login").remove();
-    $("#sign-out").html(<button id="signOutBTN">Sign Out</button>);
+    $("#sign-out").html("<button id='signOutBTN'>Sign Out</button>");
 
 
 
