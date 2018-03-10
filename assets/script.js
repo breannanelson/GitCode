@@ -11,6 +11,7 @@
 
   var provider = new firebase.auth.GithubAuthProvider();
 
+
 $("#login").on("click", function () {
 
    provider.setCustomParameters({
@@ -25,8 +26,8 @@ $("#login").on("click", function () {
     var user = result.user;
     // ...
 
-    $("#login").remove();
-    $("#sign-out").html("<button id='signOutBTN'>Sign Out</button>");
+    // $("#login").remove();
+    // $("#sign-out").html("<button id='signOutBTN'>Sign Out</button>");
 
 
 
@@ -45,9 +46,7 @@ $("#login").on("click", function () {
 //     ui.start('#firebaseui-auth-container', uiConfig);
 //   }
 
-$("#signOutBTN").on("click", function(){
-    firebase.auth().signOut();
-})
+
 
 
   initApp = function() {
@@ -61,6 +60,7 @@ $("#signOutBTN").on("click", function(){
         var uid = user.uid;
         var phoneNumber = user.phoneNumber;
         var providerData = user.providerData;
+        console.log("I am signed in")
         user.getIdToken().then(function(accessToken) {
           document.getElementById('sign-in-status').textContent = 'Signed in';
           document.getElementById('sign-in').textContent = 'Sign out';
@@ -94,5 +94,9 @@ $("#signOutBTN").on("click", function(){
 
 })
 
+// $("#signOutBTN").on("click", function(){
+//     console.log("Hello")
+//     firebase.auth().signOut();
+// })
 
 
