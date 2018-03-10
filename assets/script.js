@@ -93,12 +93,8 @@ window.addEventListener('load', function () {
 });
 
 
-
-
-
-// $("#signOutBTN").on("click", function(){
-//     console.log("Hello")
-//     firebase.auth().signOut();
-// })
+$("#signOutBTN").on("click", function(){
+    firebase.auth().signOut();
+})
 
 
