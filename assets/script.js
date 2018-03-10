@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 var provider = new firebase.auth.GithubAuthProvider();
 
 
-$("#signInBTN").on("click", function () {
+$("#login").on("click", function () {
     console.log("Hello there!")
     provider.setCustomParameters({
         'allow_signup': 'true'
