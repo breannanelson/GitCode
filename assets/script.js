@@ -12,11 +12,7 @@
   var provider = new firebase.auth.GithubAuthProvider();
 
 $("#login").on("click", function () {
-    //Open a popup with the FirebaseUI widget.
-//    var signInWithPopup = function() {
-//      window.open(getWidgetUrl(), 'Sign In', 'width=985,height=735');
-//    };
-//    signInWithPopup()
+
    provider.setCustomParameters({
     'allow_signup': 'true'
   });
@@ -28,6 +24,12 @@ $("#login").on("click", function () {
     // The signed-in user info.
     var user = result.user;
     // ...
+
+    $("#login").remove();
+    $("#sign-out").html(<button id="signOutBTN">Sign Out</button>);
+
+
+
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -42,6 +44,10 @@ $("#login").on("click", function () {
 //   if (ui.isPendingRedirect()) {
 //     ui.start('#firebaseui-auth-container', uiConfig);
 //   }
+
+$("#signOutBTN").on("click", function(){
+    firebase.auth().signOut();
+})
 
 
   initApp = function() {
@@ -87,4 +93,6 @@ $("#login").on("click", function () {
 
 
 })
+
+
 
