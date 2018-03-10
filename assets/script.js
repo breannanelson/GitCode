@@ -94,7 +94,9 @@ window.addEventListener('load', function () {
 
 
 $("#signOutBTN").on("click", function(){
-    firebase.auth().signOut();
+    console.log("Hello");
+    provider.signOut();
+    // firebase.auth().signOut();
 })
 
 
