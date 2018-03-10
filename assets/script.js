@@ -28,10 +28,6 @@ $("#login").on("click", function () {
     $("#login").remove();
     $("#sign-out").html(<button id="signOutBTN">Sign Out</button>);
 
-    $("#signOutBTN").on("click", function(){
-    console.log("Hello")
-    })
-
 
 
   }).catch(function(error) {
@@ -48,6 +44,10 @@ $("#login").on("click", function () {
 //   if (ui.isPendingRedirect()) {
 //     ui.start('#firebaseui-auth-container', uiConfig);
 //   }
+
+$("#signOutBTN").on("click", function(){
+    firebase.auth().signOut();
+})
 
 
   initApp = function() {
