@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 var provider = new firebase.auth.GithubAuthProvider();
 
 
-$("#login").on("click", function () {
+$("#SignInBTN").on("click", function () {
 
     provider.setCustomParameters({
         'allow_signup': 'true'
@@ -85,7 +85,7 @@ var initApp = function () {
             document.getElementById('sign-in').textContent = 'Sign in';
             document.getElementById('account-details').textContent = 'null';
             document.getElementById('signOutBTN').style.display ='none';
-            $("#login").html("<button id='login'>Sign In</button>")
+            $("#login").html("<button id='SignInBTN'>Sign In</button>")
             
         }
     }, function (error) {
