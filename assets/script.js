@@ -64,7 +64,7 @@ var initApp = function () {
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
             $("#login").remove();
-            document.getElementById('signOutBTN').style.display ='block';
+            document.getElementById('sign-out').style.display ='block';
             user.getIdToken().then(function (accessToken) {
                 document.getElementById('sign-in-status').textContent = 'Signed in';
                 document.getElementById('sign-in').textContent = 'Sign out';
@@ -85,7 +85,7 @@ var initApp = function () {
             document.getElementById('sign-in').textContent = 'Sign in';
             document.getElementById('account-details').textContent = 'null';
             document.getElementById('signOutBTN').style.display ='none';
-            
+
             
         }
     }, function (error) {
