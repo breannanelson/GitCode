@@ -9,22 +9,24 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// Creates an instance of the GitHub provider object
 var provider = new firebase.auth.GithubAuthProvider();
 
-
+// onclick event for Sign In button
 $("#login").on("click", function () {
-    console.log("Hello there!")
+
+    // Allows user to create an account with GitHub
     provider.setCustomParameters({
         'allow_signup': 'true'
     });
 
-
+    // Sign in popup window
     firebase.auth().signInWithPopup(provider).then(function (result) {
         // This gives you a GitHub Access Token. You can use it to access the GitHub API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        // ...
+
     }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -33,21 +35,18 @@ $("#login").on("click", function () {
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
-        // ...
+        
     });
-
-    //   if (ui.isPendingRedirect()) {
-    //     ui.start('#firebaseui-auth-container', uiConfig);
-    //   }
-
-
 })
 
+//  Track the Auth state across all your pages
 var initApp = function () {
-    document.getElementById('signOutBTN').addEventListener('click', function(){
+    // on click event for sign out button
+    document.getElementById('signOutBTN').addEventListener('click', function () {
         firebase.auth().signOut();
     });
-    
+
+    // Track the Auth state across all your pages:
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
@@ -58,8 +57,9 @@ var initApp = function () {
             var uid = user.uid;
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
+            // Removes Sign In button and replaces it with Sign Out button
             $("#login").empty();
-            document.getElementById('signOutBTN').style.display ='block';
+            document.getElementById('signOutBTN').style.display = 'block';
             user.getIdToken().then(function (accessToken) {
                 document.getElementById('sign-in-status').textContent = 'Signed in';
                 document.getElementById('sign-in').textContent = 'Sign out';
@@ -79,22 +79,18 @@ var initApp = function () {
             document.getElementById('sign-in-status').textContent = 'Signed out';
             document.getElementById('sign-in').textContent = 'Sign in';
             document.getElementById('account-details').textContent = 'null';
-            document.getElementById('signOutBTN').style.display ='none';
-            $("#login").html("<button id='signInBTN'>Sign In</button>")
-            
+            document.getElementById('signOutBTN').style.display = 'none';
+            // Adds login button again
+            $("#login").html("<button id='signInBTN'>Sign In</button>");
+
         }
     }, function (error) {
         console.log(error);
     });
 };
 
+// Event listener for when the page is loaded.
+// Runs the initApp to determine if the user is logged in or not
 window.addEventListener('load', initApp);
-
-
-// $("#signOutBTN").on("click", function(){
-//     console.log("Hello");
-//     provider.signOut();
-//     // firebase.auth().signOut();
-// })
 
 
