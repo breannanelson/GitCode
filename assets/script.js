@@ -85,7 +85,7 @@ var initApp = function () {
             document.getElementById('sign-in').textContent = 'Sign in';
             document.getElementById('account-details').textContent = 'null';
             document.getElementById('signOutBTN').style.display ='none';
-
+            $("#login").html("<button id='login'>Sign In</button>")
             
         }
     }, function (error) {
