@@ -87,7 +87,9 @@ $("#login").on("click", function () {
   };
 
   window.addEventListener('load', function() {
-    initApp()
+    console.log("Hello");
+    initApp();
+
   });
 
 
