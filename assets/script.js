@@ -63,7 +63,7 @@ var initApp = function () {
             var uid = user.uid;
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
-            $("#login").remove();
+            $("#login").empty();
             document.getElementById('signOutBTN').style.display ='block';
             user.getIdToken().then(function (accessToken) {
                 document.getElementById('sign-in-status').textContent = 'Signed in';
