@@ -48,12 +48,10 @@ $("#login").on("click", function () {
 
 })
 
-initApp = function () {
-    $("#signOutBTN").on("click", function(){
-        console.log("Hello");
-        // provider.signOut();
+var initApp = function () {
+    document.getElementById('signOutBTN').addEventListener('click', function(){
         firebase.auth().signOut();
-    })
+    });
     
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -92,11 +90,7 @@ initApp = function () {
     });
 };
 
-window.addEventListener('load', function () {
-    console.log("Hello");
-    initApp();
-
-});
+window.addEventListener('load', initApp);
 
 
 // $("#signOutBTN").on("click", function(){
