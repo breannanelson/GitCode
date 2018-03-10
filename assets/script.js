@@ -49,6 +49,12 @@ $("#login").on("click", function () {
 })
 
 initApp = function () {
+    $("#signOutBTN").on("click", function(){
+        console.log("Hello");
+        // provider.signOut();
+        firebase.auth().signOut();
+    })
+    
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
@@ -93,10 +99,10 @@ window.addEventListener('load', function () {
 });
 
 
-$("#signOutBTN").on("click", function(){
-    console.log("Hello");
-    provider.signOut();
-    // firebase.auth().signOut();
-})
+// $("#signOutBTN").on("click", function(){
+//     console.log("Hello");
+//     provider.signOut();
+//     // firebase.auth().signOut();
+// })
 
 
