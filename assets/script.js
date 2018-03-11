@@ -90,17 +90,25 @@ var initApp = function () {
                 //     providerData: providerData
                 // }, null, '  ');
 
-                userData.push({
-                    displayName: displayName,
-                    userID : uid
-                  });
+          
 
                 userData.on("value", function(snapshot) {
+                    var checker = false; 
 
-                    console.log(Object.keys(snapshot.val()));
+                    // console.log(Object.keys(snapshot.val()));
                     Object.keys(snapshot.val()).forEach(function(keys){
-                        console.log("display  name ==> " +   snapshot.val()[keys].displayName);
+                        // console.log("display  name ==> " +   snapshot.val()[keys].displayName);
+                        if(snapshot.val()[keys].displayName === displayName){
+                          checker = true;
+                          break;
+                        }
                     });
+                    if (!checker) { 
+                        userData.push({
+                            displayName: displayName,
+                            userID : uid
+                          });
+                    }  
                 })
 
 
