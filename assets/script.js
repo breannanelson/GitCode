@@ -93,10 +93,10 @@ var initApp = function () {
           
 
                 userData.on("value", function(snapshot) {
-                    console.log(snapshot.val())
+
                     var checker = false; 
-                    var snapSht = Object.keys(snapshot.val());
-                    if( snapSht.length == 0){ 
+                    // var snapSht = Object.keys(snapshot.val());
+                    if(!snapshot.val()){ 
                         userData.push({
                             displayName: displayName,
                             userID : uid
