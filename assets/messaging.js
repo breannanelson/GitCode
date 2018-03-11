@@ -1,15 +1,15 @@
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAUT3mY8ly8eMeZ6ZJAbHlj3b_UK1KTJwo",
-    authDomain: "cocode-5453e.firebaseapp.com",
-    databaseURL: "https://cocode-5453e.firebaseio.com",
-    projectId: "cocode-5453e",
-    storageBucket: "cocode-5453e.appspot.com",
-    messagingSenderId: "279389961862"
-  };
-  firebase.initializeApp(config);
+//   // Initialize Firebase
+//   var config = {
+//     apiKey: "AIzaSyAUT3mY8ly8eMeZ6ZJAbHlj3b_UK1KTJwo",
+//     authDomain: "cocode-5453e.firebaseapp.com",
+//     databaseURL: "https://cocode-5453e.firebaseio.com",
+//     projectId: "cocode-5453e",
+//     storageBucket: "cocode-5453e.appspot.com",
+//     messagingSenderId: "279389961862"
+//   };
+//   firebase.initializeApp(config);
 
-var database = firebase.database();
+// var database = firebase.database();
 var chatData = database.ref("/chat");
  // CHAT LISTENERS
   // Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
