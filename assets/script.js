@@ -93,6 +93,7 @@ var initApp = function () {
           
 
                 userData.on("value", function(snapshot) {
+                    console.log(snapshot.val())
                     var checker = false; 
                     var snapSht = Object.keys(snapshot.val());
                     if( snapSht.length == 0){ 
