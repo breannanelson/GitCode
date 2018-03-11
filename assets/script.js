@@ -99,7 +99,7 @@ var initApp = function () {
 
                     console.log(Object.keys(snapshot.val()));
                     Object.keys(snapshot.val()).forEach(function(keys){
-                        console.log("display  name ==> " +   snapshot[keys]);
+                        console.log("display  name ==> " +   snapshot.val()[keys]);
                     });
                 })
 
