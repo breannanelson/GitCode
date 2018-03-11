@@ -18,14 +18,20 @@
     <div id="login">
         <button id="signInBTN">Sign In</button>
     </div>
-    
-    
+    <div id="chat" style="display: none">
+        <div id="chat-messages"></div>
+        <form>
+            <input id="chat-input" type="text">
+            <button id="chat-send">Enter</button>
+        </form>
+    </div>
     <button id="signOutBTN" style="display: none">Sign Out</button>
 
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
+    <script src="./assets/messaging.js"></script>
 </body>
 
 </html>

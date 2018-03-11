@@ -106,6 +106,9 @@ var initApp = function () {
                 $('#account-details').append("<img src='" + photoURL + "' alt='Profile Photo'><br>");
                 $('#account-details').append(displayName + "<br>");
                 $('#account-details').append(email + "<br>");
+
+
+                document.getElementById('chat').style.display = 'block';
             
             });
         } else {
