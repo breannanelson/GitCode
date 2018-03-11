@@ -41,5 +41,5 @@ var chatData = database.ref("/chat");
   chatData.on("child_added", function(snapshot) {
       var msg = snapshot.val();
     //   console.log(msg);
-      $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm"));
+      $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>");
   });
