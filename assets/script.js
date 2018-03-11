@@ -9,6 +9,10 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var database = firebase.database();
+var userData = database.ref("/users");
+
+
 // Creates an instance of the GitHub provider object
 var provider = new firebase.auth.GithubAuthProvider();
 
@@ -73,7 +77,10 @@ var initApp = function () {
                 //     accessToken: accessToken,
                 //     providerData: providerData
                 // }, null, '  ');
-
+                userData.push({
+                    displayName: displayName,
+                    userID : uid
+                  });
                 $('#account-details').append("<img src='" + photoURL + "' alt='Profile Photo'><br>");
                 $('#account-details').append(displayName + "<br>");
                 $('#account-details').append(email + "<br>");
