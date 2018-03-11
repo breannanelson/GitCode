@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var userData = database.ref("/users");
 
-// var userArr = [];
+var userArr = [];
 var displayName = "";
 var uid = "";
 
