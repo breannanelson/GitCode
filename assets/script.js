@@ -16,6 +16,15 @@ var userData = database.ref("/users");
 var displayName = "";
 var uid = "";
 
+function ifExistUser(name){
+for(var i = 0; i < userArr.length; i++){
+    if(userArr[i].displayName === name){
+        return true;
+    }
+}
+return false;
+}
+
 // Creates an instance of the GitHub provider object
 var provider = new firebase.auth.GithubAuthProvider();
 
@@ -80,15 +89,19 @@ var initApp = function () {
                 //     accessToken: accessToken,
                 //     providerData: providerData
                 // }, null, '  ');
-                userData.push({
-                    displayName: displayName,
-                    userID : uid
-                  });
+                if(!ifExistUser(displayName)){ 
 
-                //   userArr.push({
-                //     displayName: displayName,
-                //     userID : uid
-                //   });
+                    userData.push({
+                        displayName: displayName,
+                        userID : uid
+                      });
+                      userArr.push({
+                        displayName: displayName,
+                        userID : uid
+                      });
+
+                     
+                }
 
                 $('#account-details').append("<img src='" + photoURL + "' alt='Profile Photo'><br>");
                 $('#account-details').append(displayName + "<br>");
