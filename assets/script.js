@@ -102,15 +102,20 @@ var initApp = function () {
                           });
                         return;
                     }
-                    
+                    var index = 0; 
+                    while(!checker && index < snapSht.length){ 
+                        if(snapSht[index].displayName === displayName){ 
+                            checker = true; 
+                        }   
+                        index++;
+                    }
                     // console.log(Object.keys(snapshot.val()));
-                    Object.keys(snapshot.val()).forEach(function(keys){
+                    // Object.keys(snapshot.val()).forEach(function(keys){
                         // console.log("display  name ==> " +   snapshot.val()[keys].displayName);
-                        if(snapshot.val()[keys].displayName === displayName){
-                          checker = true;
-                          break;
-                        }
-                    });
+                        // if(snapshot.val()[keys].displayName === displayName){
+                        //   checker = true;
+                        // }
+                    // });
                     if (!checker) { 
                         userData.push({
                             displayName: displayName,
