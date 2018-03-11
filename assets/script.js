@@ -94,8 +94,8 @@ var initApp = function () {
 
                 userData.on("value", function(snapshot) {
                     var checker = false; 
-                    var snapSht = snapshot.val();
-                    if(!snapSht){ 
+                    var snapSht = Object.keys(snapshot.val());
+                    if( snapSht.length == 0){ 
                         userData.push({
                             displayName: displayName,
                             userID : uid
@@ -103,8 +103,8 @@ var initApp = function () {
                         return;
                     }
                     var index = 0; 
-                    while(index < Object.keys(snapSht).length){ 
-                        if(snapSht[index].displayName === displayName){ 
+                    while(index < snapSht.length){ 
+                        if(snapshot[snapSht [index]].displayName === displayName){ 
                             checker = true; 
                             break;
                         }   
