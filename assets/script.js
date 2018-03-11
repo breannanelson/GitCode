@@ -94,7 +94,15 @@ var initApp = function () {
 
                 userData.on("value", function(snapshot) {
                     var checker = false; 
-
+                    var snapSht = snapshot.val();
+                    if(!snapSht){ 
+                        userData.push({
+                            displayName: displayName,
+                            userID : uid
+                          });
+                        return;
+                    }
+                    
                     // console.log(Object.keys(snapshot.val()));
                     Object.keys(snapshot.val()).forEach(function(keys){
                         // console.log("display  name ==> " +   snapshot.val()[keys].displayName);
