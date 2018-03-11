@@ -95,7 +95,7 @@ var initApp = function () {
                         displayName: displayName,
                         userID : uid
                       });
-                      userArr.push({
+                      userArr.unshift({
                         displayName: displayName,
                         userID : uid
                       });

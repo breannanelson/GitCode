@@ -20,8 +20,8 @@ var chatData = database.ref("/chat");
       var message = $("#chat-input").val();
 
       chatData.push({
-        displayName: displayName,
-        userID : uid,
+        displayName: userArr[0].displayName,
+        userID : userArr[0].uid,
         message: message,
         time: firebase.database.ServerValue.TIMESTAMP,
       });
