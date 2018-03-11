@@ -25,6 +25,7 @@ var chatData = database.ref("/chat");
         message: message,
         time: firebase.database.ServerValue.TIMESTAMP,
       });
+
   
     //   chatData.push({
     //     name: username,
@@ -35,4 +36,10 @@ var chatData = database.ref("/chat");
   
       $("#chat-input").val("");
     }
+  });
+
+  chatData.on("child_added", function(snapshot) {
+      var msg = snapshot.val();
+      console.log(msg);
+    //   $("#chat-messages").append()
   });
