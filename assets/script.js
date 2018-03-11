@@ -104,7 +104,7 @@ var initApp = function () {
                     }
                     var index = 0; 
                     while(index < snapSht.length){ 
-                        if(snapshot[snapSht [index]].displayName === displayName){ 
+                        if(snapshot.val()[snapSht [index]].displayName === displayName){ 
                             checker = true; 
                             break;
                         }   
