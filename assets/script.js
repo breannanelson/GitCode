@@ -95,7 +95,8 @@ var initApp = function () {
                     userID : uid
                   });
 
-                userData.on("child_added", function(snapshot) {
+                userData.orderByChild("displayName").on("child_added", function(snapshot) {
+
                     console.log(snapshot.val());
                 })
 
