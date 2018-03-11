@@ -97,8 +97,8 @@ var initApp = function () {
 
                 userData.on("value", function(snapshot) {
 
-                    console.log(object.keys(snapshot));
-                    object.keys(snapshot).forEach(function(keys){
+                    console.log(Object.keys(snapshot));
+                    Object.keys(snapshot).forEach(function(keys){
                         console.log("display  name ==> " +   snapshot[keys].displayName);
                     });
                 })
