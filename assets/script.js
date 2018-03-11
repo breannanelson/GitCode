@@ -89,19 +89,27 @@ var initApp = function () {
                 //     accessToken: accessToken,
                 //     providerData: providerData
                 // }, null, '  ');
-                if(!ifExistUser(displayName)){ 
 
-                    userData.push({
-                        displayName: displayName,
-                        userID : uid
-                      });
-                      userArr.unshift({
-                        displayName: displayName,
-                        userID : uid
-                      });
+                userData.push({
+                    displayName: displayName,
+                    userID : uid
+                  });
+
+                userData.on("child-added", function(snapshot) {
+                    console.log(snapshot.val());
+                })
+
+
+                // if(!ifExistUser(displayName)){ 
+
+                 
+                //       userArr.unshift({
+                //         displayName: displayName,
+                //         userID : uid
+                //       });
 
                      
-                }
+                // }
 
                 $('#account-details').append("<img src='" + photoURL + "' alt='Profile Photo'><br>");
                 $('#account-details').append(displayName + "<br>");
