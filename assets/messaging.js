@@ -8,7 +8,7 @@
     messagingSenderId: "279389961862"
   };
   firebase.initializeApp(config);
-  
+
 var database = firebase.database();
 var chatData = database.ref("/chat");
  // CHAT LISTENERS
@@ -20,6 +20,8 @@ var chatData = database.ref("/chat");
       var message = $("#chat-input").val();
 
       chatData.push({
+        displayName: displayName,
+        userID : uid,
         message: message,
         time: firebase.database.ServerValue.TIMESTAMP,
       });

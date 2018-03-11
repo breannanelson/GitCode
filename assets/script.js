@@ -12,6 +12,9 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var userData = database.ref("/users");
 
+// var userArr = [];
+var displayName = "";
+var uid = "";
 
 // Creates an instance of the GitHub provider object
 var provider = new firebase.auth.GithubAuthProvider();
@@ -54,8 +57,8 @@ var initApp = function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
+            displayName = user.displayName;
+            email = user.email;
             var emailVerified = user.emailVerified;
             var photoURL = user.photoURL;
             var uid = user.uid;
@@ -81,6 +84,12 @@ var initApp = function () {
                     displayName: displayName,
                     userID : uid
                   });
+
+                //   userArr.push({
+                //     displayName: displayName,
+                //     userID : uid
+                //   });
+
                 $('#account-details').append("<img src='" + photoURL + "' alt='Profile Photo'><br>");
                 $('#account-details').append(displayName + "<br>");
                 $('#account-details').append(email + "<br>");
