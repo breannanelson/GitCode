@@ -63,16 +63,21 @@ var initApp = function () {
             user.getIdToken().then(function (accessToken) {
                 document.getElementById('sign-in-status').textContent = 'Signed in';
                 document.getElementById('sign-in').textContent = 'Sign out';
-                document.getElementById('account-details').textContent = JSON.stringify({
-                    displayName: displayName,
-                    email: email,
-                    emailVerified: emailVerified,
-                    phoneNumber: phoneNumber,
-                    photoURL: photoURL,
-                    uid: uid,
-                    accessToken: accessToken,
-                    providerData: providerData
-                }, null, '  ');
+                // document.getElementById('account-details').textContent = JSON.stringify({
+                //     displayName: displayName,
+                //     email: email,
+                //     emailVerified: emailVerified,
+                //     phoneNumber: phoneNumber,
+                //     photoURL: photoURL,
+                //     uid: uid,
+                //     accessToken: accessToken,
+                //     providerData: providerData
+                // }, null, '  ');
+
+                $('#account-details').append("<img src='" + photoURL + "' alt='Profile Photo'><br>");
+                $('#account-details').append(displayName + "<br>");
+                $('#account-details').append(email + "<br>");
+            
             });
         } else {
             // User is signed out.
