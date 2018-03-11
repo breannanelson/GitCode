@@ -67,10 +67,10 @@ var initApp = function () {
         if (user) {
             // User is signed in.
             displayName = user.displayName;
-            email = user.email;
+            var email = user.email;
             var emailVerified = user.emailVerified;
             var photoURL = user.photoURL;
-            var uid = user.uid;
+            uid = user.uid;
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
             // Removes Sign In button and replaces it with Sign Out button
@@ -93,9 +93,7 @@ var initApp = function () {
           
 
                 userData.on("value", function(snapshot) {
-
                     var checker = false; 
-                    // var snapSht = Object.keys(snapshot.val());
                     if(!snapshot.val()){ 
                         userData.push({
                             displayName: displayName,
@@ -103,22 +101,14 @@ var initApp = function () {
                           });
                         return;
                     }
-                    // var index = 0; 
-                    // while(index < snapSht.length){ 
-                    //     if(snapshot.val()[snapSht [index]].displayName === displayName){ 
-                    //         checker = true; 
-                    //         break;
-                    //     }   
-                    //     index++;
-                    // }
-                    console.log(Object.keys(snapshot.val()));
+                
                     Object.keys(snapshot.val()).forEach(function(keys){
                         console.log("display  name ==> " +   snapshot.val()[keys].displayName);
                         if(snapshot.val()[keys].displayName === displayName){
                           checker = true;
                         }
                     });
-                    debugger;
+            
                     if (!checker) { 
                         userData.push({
                             displayName: displayName,
@@ -126,18 +116,6 @@ var initApp = function () {
                           });
                     }  
                 })
-
-
-                // if(!ifExistUser(displayName)){ 
-
-                 
-                //       userArr.unshift({
-                //         displayName: displayName,
-                //         userID : uid
-                //       });
-
-                     
-                // }
 
                 $('#account-details').append("<img src='" + photoURL + "' alt='Profile Photo'><br>");
                 $('#account-details').append(displayName + "<br>");
