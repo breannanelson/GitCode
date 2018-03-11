@@ -102,21 +102,21 @@ var initApp = function () {
                           });
                         return;
                     }
-                    var index = 0; 
-                    while(index < snapSht.length){ 
-                        if(snapshot.val()[snapSht [index]].displayName === displayName){ 
-                            checker = true; 
-                            break;
-                        }   
-                        index++;
-                    }
-                    // console.log(Object.keys(snapshot.val()));
-                    // Object.keys(snapshot.val()).forEach(function(keys){
-                        // console.log("display  name ==> " +   snapshot.val()[keys].displayName);
-                        // if(snapshot.val()[keys].displayName === displayName){
-                        //   checker = true;
-                        // }
-                    // });
+                    // var index = 0; 
+                    // while(index < snapSht.length){ 
+                    //     if(snapshot.val()[snapSht [index]].displayName === displayName){ 
+                    //         checker = true; 
+                    //         break;
+                    //     }   
+                    //     index++;
+                    // }
+                    console.log(Object.keys(snapshot.val()));
+                    Object.keys(snapshot.val()).forEach(function(keys){
+                        console.log("display  name ==> " +   snapshot.val()[keys].displayName);
+                        if(snapshot.val()[keys].displayName === displayName){
+                          checker = true;
+                        }
+                    });
                     debugger;
                     if (!checker) { 
                         userData.push({
