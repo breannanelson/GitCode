@@ -117,6 +117,7 @@ var initApp = function () {
                         //   checker = true;
                         // }
                     // });
+                    debugger;
                     if (!checker) { 
                         userData.push({
                             displayName: displayName,
