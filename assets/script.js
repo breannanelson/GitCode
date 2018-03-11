@@ -97,7 +97,7 @@ var initApp = function () {
 
                 userData.on("value", function(snapshot) {
 
-                    console.log(snapshot[0].val().displayName);
+                    console.log(snapshot.val());
                 })
 
 
