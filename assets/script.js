@@ -96,7 +96,8 @@ var initApp = function () {
                         url: "message.html",
                         method: "GET",
                     }).then(function (obj) {
-                        $("body").html(obj);
+                        $("#msgDiv").html(obj);
+                        $("#chat-send").on("click", ChatUserInput());
                     })
             
 
