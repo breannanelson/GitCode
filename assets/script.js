@@ -146,11 +146,11 @@ window.addEventListener('load', initApp);
 
 
 
-// $("#messagingBTN").on("click", function () {
-//     console.log("Hello Messaging")
-//     $("#bio").empty();
-//     $("#messagingBTN").url("message.html");
-// });
+$("#messagingLink").on("click", function () {
+    console.log("Hello Messaging")
+    // $("#bio").empty();
+    $("#messagingLink").url("message.html");
+});
 
 
 
