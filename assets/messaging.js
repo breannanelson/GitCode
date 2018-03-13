@@ -13,7 +13,7 @@
 var chatData = database.ref("/chat");
 
 function ChatUserInput(event) {
-    event.preventDefault()
+    event.preventDefault();
   
     if ($("#chat-input").val() !== "") {
   
@@ -32,7 +32,9 @@ function ChatUserInput(event) {
 
  // CHAT LISTENERS
   // Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
-  $("#chat-send").on("click", ChatUserInput(event));
+  $("#chat-send").on("click", function(event) {
+    ChatUserInput(event);
+  });
 
   chatData.on("child_added", function(snapshot) {
       var msg = snapshot.val();

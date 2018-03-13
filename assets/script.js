@@ -97,7 +97,9 @@ var initApp = function () {
                         method: "GET",
                     }).then(function (obj) {
                         $("#msgDiv").html(obj);
-                        $("#chat-send").on("click", ChatUserInput(event));
+                        $("#chat-send").on("click", function(event){
+                            ChatUserInput(event);
+                        });
                     })
             
 
