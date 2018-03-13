@@ -128,7 +128,7 @@ var initApp = function () {
             // document.getElementById('account-details').textContent = 'null';
             $("#account-details").empty();
             document.getElementById('signOutBTN').style.display = 'none';
-            
+            document.getElementById('messagingLink').style.display = 'none';
             document.getElementById('chat').style.display = 'none'
             // Adds login button again
             $("#login").html("<button id='signInBTN'>Sign In</button>");
