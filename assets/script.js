@@ -75,7 +75,7 @@ var initApp = function () {
             var providerData = user.providerData;
             // Removes Sign In button and replaces it with Sign Out button
             $("#login").empty();
-            document.getElementById('messagingBTN').style.display = 'block'
+            // document.getElementById('messagingBTN').style.display = 'block';
             document.getElementById('signOutBTN').style.display = 'block';
             user.getIdToken().then(function (accessToken) {
                 document.getElementById('sign-in-status').textContent = 'Signed in';
