@@ -126,6 +126,7 @@ var initApp = function () {
             // document.getElementById('sign-in-status').textContent = 'Signed out';
             // document.getElementById('sign-in').textContent = 'Sign in';
             // document.getElementById('account-details').textContent = 'null';
+            $("##account-details").empty();
             document.getElementById('signOutBTN').style.display = 'none';
             
             document.getElementById('chat').style.display = 'none'
