@@ -99,6 +99,7 @@ var initApp = function () {
                         $("#msgDiv").html(obj);
                         $("#chat-send").on("click", function(event){
                             ChatUserInput(event);
+                            appendingMessages(event)
                         });
                     })
             
