@@ -149,7 +149,8 @@ window.addEventListener('load', initApp);
 
 
 $("#messgingBTN").on("click", function () {
-    $("#messagingBTN").load("messaging.html");
+    console.log("Hello Messaging")
+    // $("#messagingBTN").load("messaging.html");
 });
 
 
