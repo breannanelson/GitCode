@@ -13,7 +13,8 @@
 var chatData = database.ref("/chat");
  // CHAT LISTENERS
   // Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
-  $("#chat-send").click(function() {
+  $("#chat-send").click(function(event) {
+    event.preventDefault()
   
     if ($("#chat-input").val() !== "") {
   

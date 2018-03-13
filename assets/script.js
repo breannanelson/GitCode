@@ -146,8 +146,7 @@ window.addEventListener('load', initApp);
 
 
 
-$("#messagingBTN").on("click", function (event) {
-    event.preventDefault()
+$("#messagingBTN").on("click", function () {
     console.log("Hello Messaging")
     $("#bio").empty();
     $("#messagingBTN").load("message.html");
