@@ -118,9 +118,7 @@ var initApp = function () {
                     }  
                 })
 
-                $('#account-details').append("<img src='" + photoURL + "' alt='Profile Photo'><br>");
-                $('#account-details').append(displayName + "<br>");
-                $('#account-details').append(email + "<br>");
+                $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
 
 
                 // document.getElementById('chat').style.display = 'block';
@@ -148,8 +146,10 @@ window.addEventListener('load', initApp);
 
 
 
-$("#messagingBTN").on("click", function () {
+$("#messagingBTN").on("click", function (event) {
+    event.preventDefault()
     console.log("Hello Messaging")
+    $("#bio").empty();
     $("#messagingBTN").load("message.html");
 });
 
