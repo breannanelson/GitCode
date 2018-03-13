@@ -16,14 +16,6 @@ var userArr = [];
 var displayName = "";
 var uid = "";
 
-function ifExistUser(name){
-for(var i = 0; i < userArr.length; i++){
-    if(userArr[i].displayName === name){
-        return true;
-    }
-}
-return false;
-}
 
 // Creates an instance of the GitHub provider object
 var provider = new firebase.auth.GithubAuthProvider();
@@ -80,8 +72,8 @@ var initApp = function () {
             document.getElementById('messagingLink').style.display = 'block';
             
             user.getIdToken().then(function (accessToken) {
-                document.getElementById('sign-in-status').textContent = 'Signed in';
-                document.getElementById('sign-in').textContent = 'Sign out';
+                // document.getElementById('sign-in-status').textContent = 'Signed in';
+                // document.getElementById('sign-in').textContent = 'Sign out';
                 // document.getElementById('account-details').textContent = JSON.stringify({
                 //     displayName: displayName,
                 //     email: email,
@@ -126,14 +118,14 @@ var initApp = function () {
                     }  
                 })
 
-                $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
+                $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br>" + providerData + "<br></div>");
             
             });
         } else {
             // User is signed out.
-            document.getElementById('sign-in-status').textContent = 'Signed out';
-            document.getElementById('sign-in').textContent = 'Sign in';
-            document.getElementById('account-details').textContent = 'null';
+            // document.getElementById('sign-in-status').textContent = 'Signed out';
+            // document.getElementById('sign-in').textContent = 'Sign in';
+            // document.getElementById('account-details').textContent = 'null';
             document.getElementById('signOutBTN').style.display = 'none';
             
             document.getElementById('chat').style.display = 'none'
