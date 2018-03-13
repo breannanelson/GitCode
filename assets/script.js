@@ -77,6 +77,8 @@ var initApp = function () {
             $("#login").empty();
             // document.getElementById('messagingBTN').style.display = 'block';
             document.getElementById('signOutBTN').style.display = 'block';
+            document.getElementById('messagingLink').style.display = 'block';
+            
             user.getIdToken().then(function (accessToken) {
                 document.getElementById('sign-in-status').textContent = 'Signed in';
                 document.getElementById('sign-in').textContent = 'Sign out';
@@ -91,6 +93,12 @@ var initApp = function () {
                 //     providerData: providerData
                 // }, null, '  ');
 
+                $("#messagingLink").on("click", function () {
+                    console.log("Hello Messaging")
+                    $("#bio").empty();
+                    document.getElementById('messagingLink').style.display = 'none';
+                    document.getElementById('chat').style.display = 'block';
+                });
           
 
                 userData.on("value", function(snapshot) {
@@ -119,10 +127,6 @@ var initApp = function () {
                 })
 
                 $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
-
-
-
-                // document.getElementById('chat').style.display = 'block';
             
             });
         } else {
@@ -131,6 +135,8 @@ var initApp = function () {
             document.getElementById('sign-in').textContent = 'Sign in';
             document.getElementById('account-details').textContent = 'null';
             document.getElementById('signOutBTN').style.display = 'none';
+            
+            document.getElementById('chat').style.display = 'none'
             // Adds login button again
             $("#login").html("<button id='signInBTN'>Sign In</button>");
 
@@ -145,11 +151,7 @@ var initApp = function () {
 window.addEventListener('load', initApp);
 
 
-$("#messagingLink").on("click", function () {
-    console.log("Hello Messaging")
-    $("#bio").empty();
-    document.getElementById('chat').style.display = 'block';
-});
+
 
 
 
