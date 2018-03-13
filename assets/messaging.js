@@ -30,10 +30,6 @@ function chatUserInput(event) {
     }
   }
 
-  function appendingMessages(snapshot) {
-    var msg = snapshot.val();
-    $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>");
-}
 
  // CHAT LISTENERS
   // Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
@@ -42,5 +38,6 @@ function chatUserInput(event) {
   });
 
   chatData.on("child_added", function(snapshot) {
-      appendingMessages(snapshot)
-  });
+    var msg = snapshot.val();
+    $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>");
+});
