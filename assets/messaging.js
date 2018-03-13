@@ -12,7 +12,7 @@
 // var database = firebase.database();
 var chatData = database.ref("/chat");
 
-function chatUserInput(event) {
+function ChatUserInput(event) {
     event.preventDefault();
   
     if ($("#chat-input").val() !== "") {
@@ -30,7 +30,6 @@ function chatUserInput(event) {
     }
   }
 
-
  // CHAT LISTENERS
   // Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
   $("#chat-send").on("click", function(event) {
@@ -38,6 +37,6 @@ function chatUserInput(event) {
   });
 
   chatData.on("child_added", function(snapshot) {
-    var msg = snapshot.val();
-    $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>");
-});
+      var msg = snapshot.val();
+      $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>");
+  });
