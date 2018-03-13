@@ -119,7 +119,17 @@ var initApp = function () {
                 })
 
                 $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
-
+                
+                $("#messagingLink").on("click", function () {
+                    console.log("Hello Messaging")
+                    // $("#bio").empty();
+                    $.ajax({
+                        url: "message.html",
+                        method: "GET",
+                    }).then(function (obj) {
+                        console.log(obj)
+                    });
+                });
 
                 // document.getElementById('chat').style.display = 'block';
             
@@ -146,16 +156,7 @@ window.addEventListener('load', initApp);
 
 
 
-$("#messagingLink").on("click", function () {
-    console.log("Hello Messaging")
-    // $("#bio").empty();
-    $.ajax({
-        url: "message.html",
-        method: "GET",
-    }).then(function (obj) {
-        console.log(obj)
-    });
-});
+
 
 
 
