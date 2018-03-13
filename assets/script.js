@@ -86,8 +86,8 @@ var initApp = function () {
                 // }, null, '  ');
 
                 $("#messagingLink").on("click", function () {
-                    console.log("Hello Messaging")
-                    // $("#bio").empty();
+                    
+                    $("#bio").empty();
                     // document.getElementById('messagingLink').style.display = 'none';
                     // document.getElementById('chat').style.display = 'block';
 
