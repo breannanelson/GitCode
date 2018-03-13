@@ -41,4 +41,6 @@ function chatUserInput(event) {
     ChatUserInput(event);
   });
 
-  chatData.on("child_added", appendingMessages(snapshot));
+  chatData.on("child_added", function(snapshot) {
+      appendingMessages(snapshot)
+  });
