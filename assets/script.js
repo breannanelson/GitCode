@@ -87,9 +87,19 @@ var initApp = function () {
 
                 $("#messagingLink").on("click", function () {
                     console.log("Hello Messaging")
-                    $("#bio").empty();
-                    document.getElementById('messagingLink').style.display = 'none';
-                    document.getElementById('chat').style.display = 'block';
+                    // $("#bio").empty();
+                    // document.getElementById('messagingLink').style.display = 'none';
+                    // document.getElementById('chat').style.display = 'block';
+
+                
+                    $.ajax({
+                        url: "message.html",
+                        method: "GET",
+                    }).then(function (obj) {
+                        console.log(obj)
+                    })
+            
+
                 });
           
 
