@@ -118,7 +118,7 @@ var initApp = function () {
                     }  
                 })
 
-                $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br>" + providerData + "<br></div>");
+                $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
             
             });
         } else {
