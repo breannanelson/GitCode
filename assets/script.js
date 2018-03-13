@@ -96,7 +96,7 @@ var initApp = function () {
                         url: "message.html",
                         method: "GET",
                     }).then(function (obj) {
-                        console.log(obj)
+                        $("body").html(obj);
                     })
             
 
