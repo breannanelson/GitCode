@@ -88,8 +88,6 @@ var initApp = function () {
                 $("#messagingLink").on("click", function () {
                     
                     $("#bio").empty();
-                    // document.getElementById('messagingLink').style.display = 'none';
-                    // document.getElementById('chat').style.display = 'block';
 
                 
                     $.ajax({
@@ -142,7 +140,7 @@ var initApp = function () {
             $("#account-details").empty();
             document.getElementById('signOutBTN').style.display = 'none';
             document.getElementById('messagingLink').style.display = 'none';
-            // document.getElementById('chat').style.display = 'none'
+    
             // Adds login button again
             $("#login").html("<button id='signInBTN'>Sign In</button>");
 
