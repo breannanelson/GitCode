@@ -65,9 +65,8 @@ var initApp = function () {
     // Track the Auth state across all your pages:
     firebase.auth().onAuthStateChanged(function (user) {
         if (user || localStorage.getItem('name') === 'true') {
-            console.log('hi')
             $("#loginPage").css("display", "none");
-            $(".container").css("display", "none");
+            $(".container").css("display", "block");
             $("#profilePage").css("display", "block");
             // User is signed in.
             displayName = user.displayName;
