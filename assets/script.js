@@ -7,7 +7,9 @@ var config = {
     storageBucket: "cocode-5453e.appspot.com",
     messagingSenderId: "279389961862"
 };
-firebase.initializeApp(config);
+if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+}
 
 var database = firebase.database();
 var userData = database.ref("/users");
@@ -15,7 +17,7 @@ var userData = database.ref("/users");
 var userArr = [];
 var displayName = "";
 var uid = "";
-var photoURL ="";
+var photoURL = "";
 
 
 // Creates an instance of the GitHub provider object
@@ -44,7 +46,7 @@ $("#login").on("click", function () {
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
-        
+
     });
 })
 
@@ -71,7 +73,7 @@ var initApp = function () {
             // document.getElementById('messagingBTN').style.display = 'block';
             document.getElementById('signOutBTN').style.display = 'block';
             document.getElementById('messagingLink').style.display = 'block';
-            
+
             user.getIdToken().then(function (accessToken) {
                 // document.getElementById('sign-in-status').textContent = 'Signed in';
                 // document.getElementById('sign-in').textContent = 'Sign out';
@@ -87,51 +89,51 @@ var initApp = function () {
                 // }, null, '  ');
 
                 $("#messagingLink").on("click", function () {
-                    
+
                     $("#bio").empty();
 
-                
+
                     $.ajax({
                         url: "message.html",
                         method: "GET",
                     }).then(function (obj) {
                         $("#msgDiv").html(obj);
-                        $("#chat-send").on("click", function(event){
+                        $("#chat-send").on("click", function (event) {
                             ChatUserInput(event);
                         });
                     })
-            
+
 
                 });
-          
 
-                userData.on("value", function(snapshot) {
-                    var checker = false; 
-                    if(!snapshot.val()){ 
+
+                userData.on("value", function (snapshot) {
+                    var checker = false;
+                    if (!snapshot.val()) {
                         userData.push({
                             displayName: displayName,
-                            userID : uid
-                          });
+                            userID: uid
+                        });
                         return;
                     }
-                
-                    Object.keys(snapshot.val()).forEach(function(keys){
-                        console.log("display  name ==> " +   snapshot.val()[keys].displayName);
-                        if(snapshot.val()[keys].displayName === displayName){
-                          checker = true;
+
+                    Object.keys(snapshot.val()).forEach(function (keys) {
+                        console.log("display  name ==> " + snapshot.val()[keys].displayName);
+                        if (snapshot.val()[keys].displayName === displayName) {
+                            checker = true;
                         }
                     });
-            
-                    if (!checker) { 
+
+                    if (!checker) {
                         userData.push({
                             displayName: displayName,
-                            userID : uid
-                          });
-                    }  
+                            userID: uid
+                        });
+                    }
                 })
 
                 $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
-            
+
             });
         } else {
             // User is signed out.
@@ -141,7 +143,7 @@ var initApp = function () {
             $("#account-details").empty();
             document.getElementById('signOutBTN').style.display = 'none';
             document.getElementById('messagingLink').style.display = 'none';
-    
+
             // Adds login button again
             $("#login").html("<button id='signInBTN'>Sign In</button>");
 
