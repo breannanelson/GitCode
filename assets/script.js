@@ -129,8 +129,9 @@ var initApp = function () {
             });
         } else {
             // User is signed out.
+            console.log("Hellooooooo")
             $("#messageDiv").css("display", "none");
-            $("#profile").css("display", "none");
+            $("#profileDiv").css("display", "none");
     
             // Adds login button again
         
