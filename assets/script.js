@@ -52,6 +52,7 @@ $("#signInBTN").on("click", function () {
 var initApp = function () {
     // on click event for sign out button
     $('signOutBTN').on('click', function () {
+        console.log("Hi")
         firebase.auth().signOut();
     });
 
