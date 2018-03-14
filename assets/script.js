@@ -50,6 +50,7 @@ $("#signInBTN").on("click", function () {
 
 //  Track the Auth state across all your pages
 var initApp = function () {
+    
     // on click event for sign out button
     $('#signOutBTN').on('click', function () {
         console.log("Hi")
@@ -59,6 +60,7 @@ var initApp = function () {
     // Track the Auth state across all your pages:
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            $("#profileDiv").css("display", "block");
             // User is signed in.
             displayName = user.displayName;
             var email = user.email;
