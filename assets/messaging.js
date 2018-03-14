@@ -9,7 +9,6 @@ function ChatUserInput(event) {
 
       chatData.push({
         displayName: displayName,
-        photo: photoURL,
         userID : uid,
         message: message,
         time: firebase.database.ServerValue.TIMESTAMP,
@@ -28,5 +27,5 @@ function ChatUserInput(event) {
   chatData.on("child_added", function(snapshot) {
       var msg = snapshot.val();
       console.log(msg)
-      $("#chat-messages").append("<img src='" + msg.photo + "' alt='Profile Photo' style='width: 30px; height: 30px;'>" + msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
+      $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
   });
