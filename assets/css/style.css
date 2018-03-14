@@ -1,0 +1,103 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+
+ #map {
+    height: 500px;
+    width: 750px;
+    margin: 20px;
+  }
+  
+  .jumbotron {
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+  }
+  
+  .card {
+    display: inline-block;
+    margin: 10px;
+    width: 345px;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav p {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav p:hover {
+    color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    background-color:#111;
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .hamburger {
+    color: white;
+  }
+  
+  .img-circle {
+    border-radius: 1000px;
+  }
+  
+  p {
+    width: 480px;
+    text-align: left;
+  }
+  
+  .message{
+    width: auto;
+    margin-bottom: 2px;
+  }
+  .message-inner {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgb(232, 232, 232);
+    border-radius: 100px;
+  }
+  .message.from-me{
+    text-align: right;
+  }
+  .message.from-me .message-inner {
+    background-color: blue;
+    color: #fff;
+  }
+  
+  
+  @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  }

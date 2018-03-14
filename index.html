@@ -5,36 +5,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.css" />
-    <title>Document</title>
+    <title>cocode</title>
 </head>
 
 <body>
-    <div id="profileDiv" style="display: block;">
-        <div id="account-details"></div>
+
+
+    <div id="loginPage" style="display: block;">
+        <button id="signInBTN">Sign In</button>
     </div>
 
-    <div id="messageDiv" style="display: none;">
-        <div id="chat-messages"></div>
-        <form>
-            <input id="chat-input" type="text">
-            <button id="chat-send">Enter</button>
-        </form>
-    </div>
 
-    <button id="profileLink">Profile</button>
-    <button id="messagingLink">Messages</button>
-    <button id="signOutBTN">Sign Out</button>
-    <button id="signInBTN">Sign In</button>
 
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
-    <!-- MomentJS -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <script src="./assets/script.js"></script>
-    <script src="./assets/messaging.js"></script>
+    <div class="container" style="display: none;">
+        <div class="row">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <p id="profileLink">Profile</p>
+                <p id="mapLink">Maps</p>
+                <p id="jobsLink">Job Search</p>
+                <p id="messagingLink">Messaging</p>
+                <p id="contactLink">Contact</p>
+                <p id="signOutBTN">Logout</p>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="main">
+                <!-- <h2>Sidenav Push Example</h2> -->
+                <!-- <p>Click on the element below to open the side navigation menu, and push this content to the right.</p> -->
+                <span class="hamburger" style="font-size:30px;cursor:pointer" id="coolButton" onclick="openNav()">&#9776; </span>
+            </div>
+        </div>
+
+        <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+
+            <div id="profilePage" style="display: block;">
+                <div id="account-details"></div>
+            </div>
+
+            <div id="mapSpace" class='pageLinks' style="display: none">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="form">
+                            <div class="text">My Current Location</div>
+                            <br>
+                            <div class="form-group">
+                                <label for="address">Enter Zip Code: </label>
+                                <input type="text" class="form-control" id="address">
+                            </div>
+                            <!-- <div class="form-group">
+                        <label for="type">Type : </label>
+                        <input type="text" class="form-control" id="type" placeholder="restaurant, coffee, etc.">
+                    </div> -->
+                            <div class="text">My Info</div>
+                            <br>
+                            <div class="form-group">
+                                <!-- get name via linkedin -->
+                                <label for="name"> Name :</label>
+                                <input type="text" class="form-control" id="name" placeholder="James">
+                            </div>
+                            <div class="form-group">
+                                <label for="time"> Working Until : </label>
+                                <input type="time" class="form-control" id="time" placeholder="10pm">
+                            </div>
+                            <div class="form-group">
+                                <label for="radius"> Languages : </label>
+                                <input type="text" class="form-control" id="languages" placeholder="Java, Python, C++">
+                            </div>
+                            <div class="form-group">
+                                <label for="radius"> Project Info : </label>
+                                <input type="textbox" class="form-control" id="projInfo" placeholder="Explain the project...">
+                            </div>
+                            <!-- add contact info to message via linkedin-->
+
+                            <button type='submit' value='Encode' id='submitBTN'>Search</button>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md">
+                        <div id="map"></div>
+                        <div id='convoBox'></div>
+                        <button id="lightMap">Light Map</button>
+                        <button id="darkMap">Dark Map</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="list"></div>
+                </div>
+            </div>
+
+            <div id="jobsPage" class='pageLinks' style="display: none;">
+                <div class="row">
+                    <div class="jumbotron">
+                        <h1>JOB SEARCH</h1>
+                        <br>
+                        <span>Job Title:</span>
+                        <input type="text" id="keyword">
+                        <span>City:</span>
+                        <input type="text" id="city">
+                        <span>State:</span>
+                        <input type="text" id="state">
+                        <br>
+                        <br>
+                        <button class="submit" id='jobSearchBTN'>SUBMIT</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="jobArr"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="messagePage" style="display: none;">
+                <div id="chat-messages"></div>
+                <form>
+                    <input id="chat-input" type="text">
+                    <button id="chat-send">Enter</button>
+                </form>
+            </div>
+
+            <div id="contactPage" style="display: none;">
+                <p>About the developers...</p>
+            </div>
+
+
+        </div>
+
+
+  
+
+        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+        <!-- MomentJS -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <script src="./assets/javascript/script.js"></script>
+        <script src="./assets/javascript/messaging.js"></script>
+        <script src="./assets/javascript/javascript-switch-markers.js"></script>
 </body>
 
 </html>

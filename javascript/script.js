@@ -47,6 +47,10 @@ $("#signInBTN").on("click", function () {
         var credential = error.credential;
 
     });
+
+    $("#loginPage").css("display", "none");
+    $(".container").css("display", "block");
+
 })
 
 //  Track the Auth state across all your pages
@@ -54,14 +58,13 @@ var initApp = function () {
 
     // on click event for sign out button
     $('#signOutBTN').on('click', function () {
-        console.log("Hi")
         firebase.auth().signOut();
     });
 
     // Track the Auth state across all your pages:
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            $("#profileDiv").css("display", "block");
+            $("#profilePage").css("display", "block");
             // User is signed in.
             displayName = user.displayName;
             var email = user.email;
@@ -84,7 +87,6 @@ var initApp = function () {
                     }
 
                     Object.keys(snapshot.val()).forEach(function (keys) {
-                        console.log("display  name ==> " + snapshot.val()[keys].displayName);
                         if (snapshot.val()[keys].displayName === displayName) {
                             checker = true;
                         }
@@ -104,25 +106,57 @@ var initApp = function () {
 
                 count = 1;
 
-                $("#messagingLink").on("click", function () {
-                    $("#profileDiv").css("display", "none");
-                    $("#messageDiv").css("display", "block");
-                });
-
 
                 $("#profileLink").on("click", function () {
-                    $("#profileDiv").css("display", "block");
-                    $("#messageDiv").css("display", "none");
+                    $("#profilePage").css("display", "block");
+                    $("#mapSpace").css("display", "none");
+                    $("#jobsPage").css("display", "none");
+                    $("#messagePage").css("display", "none");
+                    $("#contactPage").css("display", "none");
+                });
+
+                $("#mapLink").on("click", function () {
+                    $("#profilePage").css("display", "none");
+                    $("#mapSpace").css("display", "block");
+                    $("#jobsPage").css("display", "none");
+                    $("#messagePage").css("display", "none");
+                    $("#contactPage").css("display", "none");
 
                 });
 
+                $("#jobsLink").on("click", function () {
+                    $("#profilePage").css("display", "none");
+                    $("#mapSpace").css("display", "none");
+                    $("#jobsPage").css("display", "block");
+                    $("#messagePage").css("display", "none");
+                    $("#contactPage").css("display", "none");
 
+                });
+                $("#messagingLink").on("click", function () {
+                    $("#profilePage").css("display", "none");
+                    $("#mapSpace").css("display", "none");
+                    $("#jobsPage").css("display", "none");
+                    $("#messagePage").css("display", "block");
+                    $("#contactPage").css("display", "none");
+                });
+                $("#contactLink").on("click", function () {
+                    $("#profilePage").css("display", "none");
+                    $("#mapSpace").css("display", "none");
+                    $("#jobsPage").css("display", "none");
+                    $("#messagePage").css("display", "none");
+                    $("#contactPage").css("display", "block");
+                });
 
             });
         } else {
             // User is signed out.
-            $("#messageDiv").css("display", "none");
-            $("#profileDiv").css("display", "none");
+            $("#loginPage").css("display", "block");
+            $(".container").css("display", "none");
+            $("#profilePage").css("display", "none");
+            $("#mapSpace").css("display", "none");
+            $("#jobsPage").css("display", "none");
+            $("#messagePage").css("display", "none");
+            $("#contactPage").css("display", "none");
 
             // Adds login button again
 
