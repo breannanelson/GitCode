@@ -15,6 +15,7 @@ var userData = database.ref("/users");
 var userArr = [];
 var displayName = "";
 var uid = "";
+var photoURL ="";
 
 
 // Creates an instance of the GitHub provider object
@@ -61,7 +62,7 @@ var initApp = function () {
             displayName = user.displayName;
             var email = user.email;
             var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
+            photoURL = user.photoURL;
             uid = user.uid;
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
