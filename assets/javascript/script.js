@@ -66,6 +66,7 @@ var initApp = function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user || localStorage.getItem('name') === 'true') {
             console.log('hi')
+            $("#loginPage").css("display", "none");
             $("#profilePage").css("display", "block");
             // User is signed in.
             displayName = user.displayName;
