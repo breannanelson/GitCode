@@ -1,5 +1,4 @@
 var chatData = database.ref("/chat");
-var tempBool = true
 function ChatUserInput(event) {
     event.preventDefault();
 
@@ -15,7 +14,6 @@ function ChatUserInput(event) {
         });
 
         $("#chat-input").val("");
-        tempBool = true
     }
 }
 
@@ -25,12 +23,9 @@ $("#chat-send").on("click", function (event) {
     ChatUserInput(event);
 });
 
-if (tempBool === true) {
 
     chatData.on("child_added", function (snapshot) {
         var msg = snapshot.val();
         console.log(msg)
         $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
-        tempBool = false
     });
-}

@@ -22,7 +22,7 @@ var photoURL ="";
 var provider = new firebase.auth.GithubAuthProvider();
 
 // onclick event for Sign In button
-$("#login").on("click", function () {
+$("#signInBTN").on("click", function () {
 
     // Allows user to create an account with GitHub
     provider.setCustomParameters({
@@ -51,7 +51,7 @@ $("#login").on("click", function () {
 //  Track the Auth state across all your pages
 var initApp = function () {
     // on click event for sign out button
-    document.getElementById('signOutBTN').addEventListener('click', function () {
+    $('signOutBTN').on('click', function () {
         firebase.auth().signOut();
     });
 
@@ -67,43 +67,10 @@ var initApp = function () {
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
             // Removes Sign In button and replaces it with Sign Out button
-            $("#login").empty();
-            // document.getElementById('messagingBTN').style.display = 'block';
-            document.getElementById('signOutBTN').style.display = 'block';
-            document.getElementById('messagingLink').style.display = 'block';
-            
-            user.getIdToken().then(function (accessToken) {
-                // document.getElementById('sign-in-status').textContent = 'Signed in';
-                // document.getElementById('sign-in').textContent = 'Sign out';
-                // document.getElementById('account-details').textContent = JSON.stringify({
-                //     displayName: displayName,
-                //     email: email,
-                //     emailVerified: emailVerified,
-                //     phoneNumber: phoneNumber,
-                //     photoURL: photoURL,
-                //     uid: uid,
-                //     accessToken: accessToken,
-                //     providerData: providerData
-                // }, null, '  ');
-
-                $("#messagingLink").on("click", function () {
-                    
-                    $("#bio").empty();
-
-                
-                    $.ajax({
-                        url: "message.html",
-                        method: "GET",
-                    }).then(function (obj) {
-                        $("#msgDiv").html(obj);
-                        $("#chat-send").on("click", function(event){
-                            ChatUserInput(event);
-                        });
-                    })
-            
-
-                });
           
+            // document.getElementById('messagingBTN').style.display = 'block';
+    
+            user.getIdToken().then(function (accessToken) {
 
                 userData.on("value", function(snapshot) {
                     var checker = false; 
@@ -131,19 +98,42 @@ var initApp = function () {
                 })
 
                 $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
+
+
+                $("#messagingLink").on("click", function () {
+                    $("#profileDiv").css("display", "none");
+                    $("#messageDiv").css("display", "block");
+                
+                    // $.ajax({
+                    //     url: "message.html",
+                    //     method: "GET",
+                    // }).then(function (obj) {
+                    //     $("#msgDiv").html(obj);
+                    //     $("#chat-send").on("click", function(event){
+                    //         ChatUserInput(event);
+                    //     });
+                    // })
+        
+                });
+
+                
+
+                $("#profileLink").on("click", function () {
+                    $("#profileDiv").css("display", "block");
+                    $("#messageDiv").css("display", "none");
+        
+                });
+          
+
             
             });
         } else {
             // User is signed out.
-            // document.getElementById('sign-in-status').textContent = 'Signed out';
-            // document.getElementById('sign-in').textContent = 'Sign in';
-            // document.getElementById('account-details').textContent = 'null';
-            $("#account-details").empty();
-            document.getElementById('signOutBTN').style.display = 'none';
-            document.getElementById('messagingLink').style.display = 'none';
+            $("#messageDiv").css("display", "none");
+            $("#profile").css("display", "none");
     
             // Adds login button again
-            $("#login").html("<button id='signInBTN'>Sign In</button>");
+        
 
         }
     }, function (error) {
