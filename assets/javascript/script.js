@@ -67,6 +67,7 @@ var initApp = function () {
         if (user || localStorage.getItem('name') === 'true') {
             console.log('hi')
             $("#loginPage").css("display", "none");
+            $(".container").css("display", "none");
             $("#profilePage").css("display", "block");
             // User is signed in.
             displayName = user.displayName;
