@@ -16,6 +16,7 @@ var userArr = [];
 var displayName = "";
 var uid = "";
 var photoURL ="";
+count=0;
 
 
 // Creates an instance of the GitHub provider object
@@ -99,8 +100,10 @@ var initApp = function () {
                           });
                     }  
                 })
-
-                $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
+                if(count === 0){
+                    $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
+                }
+               count = 1;
 
 
                 $("#messagingLink").on("click", function () {
