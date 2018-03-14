@@ -26,5 +26,5 @@ function ChatUserInput(event) {
 
   chatData.on("child_added", function(snapshot) {
       var msg = snapshot.val();
-      $("#chat-messages").append("<img src='" + photoURL + "' alt='Profile Photo' style='width: 20px; height: 20px;'>" + msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
+      $("#chat-messages").append("<img src='" + photoURL + "' alt='Profile Photo' style='width: 30px; height: 30px;'>" + msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
   });
