@@ -24,8 +24,8 @@ $("#chat-send").on("click", function (event) {
 });
 
 
-    chatData.on("child_added", function (snapshot) {
-        var msg = snapshot.val();
-        console.log(msg)
-        $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
-    });
+chatData.on("child_added", function (snapshot) {
+    var msg = snapshot.val();
+    console.log(msg)
+    $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
+});

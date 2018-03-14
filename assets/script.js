@@ -15,8 +15,8 @@ var userData = database.ref("/users");
 var userArr = [];
 var displayName = "";
 var uid = "";
-var photoURL ="";
-count=0;
+var photoURL = "";
+var count = 0;
 
 
 // Creates an instance of the GitHub provider object
@@ -45,13 +45,13 @@ $("#signInBTN").on("click", function () {
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
-        
+
     });
 })
 
 //  Track the Auth state across all your pages
 var initApp = function () {
-    
+
     // on click event for sign out button
     $('#signOutBTN').on('click', function () {
         console.log("Hi")
@@ -70,77 +70,62 @@ var initApp = function () {
             uid = user.uid;
             var phoneNumber = user.phoneNumber;
             var providerData = user.providerData;
-            // Removes Sign In button and replaces it with Sign Out button
-          
-            // document.getElementById('messagingBTN').style.display = 'block';
-    
+
             user.getIdToken().then(function (accessToken) {
 
-                userData.on("value", function(snapshot) {
-                    var checker = false; 
-                    if(!snapshot.val()){ 
+                userData.on("value", function (snapshot) {
+                    var checker = false;
+                    if (!snapshot.val()) {
                         userData.push({
                             displayName: displayName,
-                            userID : uid
-                          });
+                            userID: uid
+                        });
                         return;
                     }
-                
-                    Object.keys(snapshot.val()).forEach(function(keys){
-                        console.log("display  name ==> " +   snapshot.val()[keys].displayName);
-                        if(snapshot.val()[keys].displayName === displayName){
-                          checker = true;
+
+                    Object.keys(snapshot.val()).forEach(function (keys) {
+                        console.log("display  name ==> " + snapshot.val()[keys].displayName);
+                        if (snapshot.val()[keys].displayName === displayName) {
+                            checker = true;
                         }
                     });
-            
-                    if (!checker) { 
+
+                    if (!checker) {
                         userData.push({
                             displayName: displayName,
-                            userID : uid
-                          });
-                    }  
-                })
-                if(count === 0){
+                            userID: uid
+                        });
+                    }
+                });
+
+                if (count === 0) {
                     $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
                 }
-               count = 1;
 
+                count = 1;
 
                 $("#messagingLink").on("click", function () {
                     $("#profileDiv").css("display", "none");
                     $("#messageDiv").css("display", "block");
-                
-                    // $.ajax({
-                    //     url: "message.html",
-                    //     method: "GET",
-                    // }).then(function (obj) {
-                    //     $("#msgDiv").html(obj);
-                    //     $("#chat-send").on("click", function(event){
-                    //         ChatUserInput(event);
-                    //     });
-                    // })
-        
                 });
 
-                
 
                 $("#profileLink").on("click", function () {
                     $("#profileDiv").css("display", "block");
                     $("#messageDiv").css("display", "none");
-        
-                });
-          
 
-            
+                });
+
+
+
             });
         } else {
             // User is signed out.
-            console.log("Hellooooooo")
             $("#messageDiv").css("display", "none");
             $("#profileDiv").css("display", "none");
-    
+
             // Adds login button again
-        
+
 
         }
     }, function (error) {
