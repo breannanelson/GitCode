@@ -18,12 +18,14 @@ var uid = "";
 var photoURL = "";
 var count = 0;
 
+localStorage.setItem("count", "0");
 
 // Creates an instance of the GitHub provider object
 var provider = new firebase.auth.GithubAuthProvider();
 
-if(count === 0) {
+if(localStorage.getItem("count") == 0) {
     $("#loginPage").css("display", "block");
+    localStorage.setItem("count", "1");
 }
 
 
@@ -166,7 +168,7 @@ var initApp = function () {
             $("#jobsPage").css("display", "none");
             $("#messagePage").css("display", "none");
             $("#contactPage").css("display", "none");
-
+            localStorage.setItem("count", "0");
             // Adds login button again
 
 
