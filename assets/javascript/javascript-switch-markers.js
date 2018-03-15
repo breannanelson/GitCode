@@ -247,9 +247,10 @@ function initMap() {
                         //gets name of location
                         var objDesc = object.results[i].name
                         //appends to bottom of page to create list of nearby locations
-                        var objName = $('<div id="obj"><img id="place-icon" src="' + icon + '" width="100px" height="100px"> ' + objDesc + '</div>' +
+                        var objName = $('<div id="obj"><img id="place-icon" src="' + icon + '" width="100px" height="100px"><b> ' + objDesc + '</b></div>' +
                         '<div id="located">' + object.results[i].vicinity +'</div>' +
-                        "<div id='rating'>Rating: " + object.results[i].rating + "/5 </div>")
+                        "<div id='rating'>Rating: " + object.results[i].rating + "/5 </div>" +
+                        "<hr>");
                         $('#lists').append(objName);
 
                         function createMarker(place) {
