@@ -39,6 +39,7 @@ body {
 
 
 #signInBTN {
+    color: rgb(255, 254, 254);
     margin-top: 30px;
     position: absolute;
     top: 50%;
