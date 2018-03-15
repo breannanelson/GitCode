@@ -53,6 +53,12 @@ body {
 }
 
 
+#profilePage {
+    background: #fff;
+    height: 700px;
+    width: 500px;
+}
+
 
 
 /* Always set the map height explicitly to define the size of the div

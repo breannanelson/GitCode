@@ -58,7 +58,7 @@ $("#signInBTN").on("click", function () {
 
 
     $("#loginPage").css("display", "none");
-    $("body").css('background', '#fff');
+    // $("body").css('background', '#fff');
     $(".container").css("display", "block");
 
 })
