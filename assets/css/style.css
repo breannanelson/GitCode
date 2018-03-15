@@ -184,25 +184,32 @@ img {
     border-radius: 1000px;
   }
   
-  p {
-    width: 480px;
-    text-align: left;
-  }
+ p {
+   width: 480px;
+   text-align: left;
+ }
   
-  .form-group {
-    display: block;
-    margin: auto;
-    margin-left: 3%;
-  }
+.text {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}    
+    
+ .form-group {
+   display: block;
+   margin: auto;
+ }
 
   .form {
     background-color: rgba(255, 255, 255, 0.753);
+    padding: 15px;
   }
 
   .message{
     width: auto;
     margin-bottom: 2px;
   }
+
   .message-inner {
     display: inline-block;
     padding: 8px 16px;
