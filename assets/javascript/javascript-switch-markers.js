@@ -280,6 +280,13 @@ function initMap() {
                                 //     var convo = $("#chatroom").val();
                                 //     $("#convoBox").append("<p>" + convo + "</p>")
                                 // });
+                                $("#messagingLink").on("click", function () {
+                                  $("#profilePage").css("display", "none");
+                                  $("#mapSpace").css("display", "none");
+                                  $("#jobsPage").css("display", "none");
+                                  $("#messagePage").css("display", "block");
+                                  $("#contactPage").css("display", "none");
+                              });
                             });
                         };
                         createMarker(object.results[i])
