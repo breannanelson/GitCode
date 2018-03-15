@@ -1,7 +1,7 @@
 
 body {
     margin-bottom: 160px;
-    background: url(../images/login-background1.png),  rgba(0, 0, 0) 10px 10px no-repeat;
+    background: url(../images/login-background1.png), rgba(0, 0, 0, 0.911) 10px 10px no-repeat;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
