@@ -1,5 +1,5 @@
 
-.loginPage {
+#loginPage {
     margin-bottom: 160px;
     background: url(./images/login-background1.png);
     background-attachment: fixed;
@@ -9,9 +9,13 @@
 }
 
 
-/* #signInBTN {
-
-} */
+#signInBTN {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: #111; */
+}
 
 
 
