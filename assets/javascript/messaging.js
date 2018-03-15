@@ -1,10 +1,13 @@
 var chatData = database.ref("/chat");
+
+var message = "";
+
 function ChatUserInput(event) {
     event.preventDefault();
 
     if ($("#chat-input").val() !== "") {
 
-        var message = $("#chat-input").val();
+        message = $("#chat-input").val();
 
         chatData.push({
             displayName: displayName,
