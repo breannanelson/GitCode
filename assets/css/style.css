@@ -1,12 +1,26 @@
 
-body {
+/* body {
     margin-bottom: 160px;
     background: url(../images/login-background2.jpg), url(../images/login-background1.png) 10px 10px no-repeat;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
+} */
+
+
+body {
+    background: url(../images/login-background1.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  body::after {
+    background: rgba(8, 8, 8, 0.795);
+    z-index: 1;   
+  }
 
 #title {
     position: absolute;
