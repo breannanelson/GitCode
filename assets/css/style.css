@@ -1,5 +1,3 @@
-
-
 body {
   width:100%;
   height: 100%;
@@ -10,6 +8,12 @@ body {
   background-size: cover;
   position: absolute;
   z-index: -2; 
+}
+
+#submitBTN {
+  display: block;
+  margin: auto;
+  margin-top: 2%;
 }
 
 img {
@@ -32,40 +36,39 @@ img {
 }
 
 #title {
-    color: rgb(63, 62, 62);
-    font-size: 70px;
-    text-shadow: 3px 3px 3px #566a7c;
-    font-family: 'Julius Sans One', cursive;
-    font-weight: bold;
-  }
+  color: rgb(63, 62, 62);
+  font-size: 70px;
+  text-shadow: 3px 3px 3px #566a7c;
+  font-family: 'Julius Sans One', cursive;
+  font-weight: bold;
+}
   
-  #loginJumbo {
-    background-color: rgba(255, 255, 255, 0.75);
-    width: 100%;
-    height: 180px;
-    display: block;
-    margin: auto;
-    margin-top: 10%;
-  }
+#loginJumbo {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  height: 180px;
+  display: block;
+  margin: auto;
+  margin-top: 10%;
+}
   
-  
-  .hbtn {
-    box-shadow: 3px 3px 3px #363636;
-    position: relative;
-    box-sizing: border-box;
-    display: inline-block;
-    overflow: hidden;
-    padding: 10px 20px;
-    margin: 0px 3px 6px;
-    text-align: center;
-    border: 5px solid rgb(255, 255, 255);
-    background-color: #4b5b80;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    white-space: nowrap;
-    z-index: 0;
-    font-family: 'Julius Sans One', cursive;
-  } 
+.hbtn {
+  box-shadow: 3px 3px 3px #363636;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 20px;
+  margin: 0px 3px 6px;
+  text-align: center;
+  border: 5px solid rgb(255, 255, 255);
+  background-color: #4b5b80;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  z-index: 0;
+  font-family: 'Julius Sans One', cursive;
+} 
 
 
 .hbtn i {
@@ -109,15 +112,13 @@ img {
     color: #fff;
 }
 
-
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
  #map {
     height: 500px;
     width: 750px;
     margin: 20px;
-    background-color:rgba(255, 255, 255, 0.76);
-    padding: 20px;
+    border: 6px solid white;
   }
   
   .jumbotron {
@@ -209,8 +210,17 @@ img {
     margin-left: 3%;
   }
 
+  .text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    color: #4b5b80;
+    font-family: 'Julius Sans One';
+  }
+
   .form {
     background-color: rgba(255, 255, 255, 0.753);
+    padding: 20px;
   }
 
   .message{
