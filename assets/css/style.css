@@ -1,7 +1,7 @@
 body {
   height: 100%;
   width: 100%;
-  background: url(../images/login-background3.jpg);
+  background-image: url(../images/login-background3.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -87,9 +87,9 @@ img {
   transition: border-top-color 0.1s linear 0s, border-right-color 0.1s linear 0.07s, border-bottom-color 0.1s linear 0.14s, border-left-color 0.1s linear 0.21s;
 } 
 
-/* #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
+#profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
   content: "";
-  background: url(../images/profile-background2.jpg);
+  background-image: url(../images/profile-background2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -97,7 +97,7 @@ img {
   position: absolute;
   z-index: -1;   
   color: #fff;
-} */
+}
 
 #chat-send {
   background-color:#0000007d;
