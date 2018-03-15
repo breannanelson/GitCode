@@ -8,46 +8,71 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: absolute;
+    z-index: -2; 
   }
   
-  #loginPage::after {
+  #loginPage {
     width:100%;
     height: 100%;
     content: "";
-    background: url(../images/login-background1.png);
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
   }
 
-
-
 #title {
+    color: rgb(63, 62, 62);
+    font-size: 70px;
+    text-shadow: 3px 3px 3px #566a7c;
+    font-family: 'Julius Sans One', cursive;
+    font-weight: bold;
+    
+  }
+  
+  #loginJumbo {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    height: 180px;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+  }
+  
+  
+  .hbtn {
+    box-shadow: 3px 3px 3px #363636;
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px 20px;
+    margin: 0px 3px 6px;
+    text-align: center;
+    border: 5px solid rgb(255, 255, 255);
+    background-color: #4b5b80;
+    text-decoration: none;
     color: rgb(255, 255, 255);
-    font-size: 40px;
-    font-family: 'Coda Caption', sans-serif;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    white-space: nowrap;
+    z-index: 0;
+    font-family: 'Julius Sans One', cursive;
+  } 
 
 
-#signInBTN {
-    color: rgb(255, 254, 254);
-    font-size: 20px;
-    font-family: 'Coda Caption', sans-serif;
-    margin-top: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* background-color: #111; */
-}
+.hbtn i {
+  padding-right: 8px;
+} 
+
+
+.hb-border-off3 {
+  border-color: rgb(255, 255, 255);
+  transition-duration: 0.3s;
+  transition: border-top-color 0.1s linear 0s, border-right-color 0.1s linear 0.07s, border-bottom-color 0.1s linear 0.14s, border-left-color 0.1s linear 0.21s;
+} 
+
+
+.hb-border-off3:hover {
+  border-color: initial;
+  border-color: transparent;
+  transition: border-top-color 0.1s linear 0s, border-right-color 0.1s linear 0.07s, border-bottom-color 0.1s linear 0.14s, border-left-color 0.1s linear 0.21s;
+} 
 
 
 #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
