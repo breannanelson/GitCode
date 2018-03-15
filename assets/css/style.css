@@ -1,7 +1,7 @@
 body {
   height: 100%;
   width: 100%;
-  background-image: url(../images/login-background3.jpg);
+  background-image: url('../images/login-background3.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -11,10 +11,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+#messagesArea {
+  display: block;
+  margin: auto;
+}
+
 #submitBTN {
   display: block;
   margin: auto;
   margin-top: 2%;
+}
+
+#about {
+  background-color: #000000bd;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  border: 5px solid black;
 }
 
 img {
@@ -89,9 +102,9 @@ img {
 
 #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
   content: "";
-  background-image: url(../images/profile-background2.jpg);
-  background-size: cover;
+  background-image: url('../images/profile-background2.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   opacity: 1;
   position: absolute;
@@ -104,6 +117,8 @@ img {
   padding: 10px;
   display:block;
   margin: auto;
+  color: white;
+  margin-top:2%;
 }
 
 #chat-messages-all {
@@ -192,6 +207,7 @@ img {
   padding: 20px;
   text-align: center;
   text-align: justify;
+  margin-bottom: 5%;
 }
 
 .form-group {
