@@ -18,8 +18,15 @@ body {
   }
   
   body::after {
-    background: rgba(8, 8, 8, 0.795);
-    z-index: 1;   
+    content: "";
+    background: url(../images/login-background2.jpg);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
   }
 
 #title {
