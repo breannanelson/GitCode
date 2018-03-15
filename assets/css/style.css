@@ -116,6 +116,8 @@ img {
     height: 500px;
     width: 750px;
     margin: 20px;
+    background-color:rgba(255, 255, 255, 0.76);
+    padding: 20px;
   }
   
   .jumbotron {
@@ -123,6 +125,12 @@ img {
     text-align: center;
     margin-top: 5%;
   }
+
+#contact-image {
+  height: 150px; 
+  width: 150px;
+  border-radius: 1000px;
+}
   
   .card {
     display: inline-block;
