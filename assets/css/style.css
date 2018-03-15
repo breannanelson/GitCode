@@ -8,6 +8,7 @@ body {
   background-size: cover;
   position: absolute;
   z-index: -2; 
+  font-family: "Roboto", sans-serif;
 }
 
 #submitBTN {
@@ -114,18 +115,18 @@ img {
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
- #map {
-    height: 500px;
-    width: 750px;
-    margin: 20px;
-    border: 6px solid white;
-  }
+#map {
+  height: 500px;
+  width: 750px;
+  margin: 20px;
+  border: 6px solid white;
+}
   
-  .jumbotron {
-    width: 100%;
-    text-align: center;
-    margin-top: 5%;
-  }
+.jumbotron {
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+}
 
 #contact-image {
   height: 150px; 
@@ -133,28 +134,24 @@ img {
   border-radius: 1000px;
 }
   
-  .card {
-    display: inline-block;
-    margin: 10px;
-    width: 345px;
-  }
-  
-  body {
-    font-family: "Roboto", sans-serif;
-  }
-  
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
+.card {
+  display: inline-block;
+  margin: 10px;
+  width: 345px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
   
   .sidenav p {
     padding: 8px 8px 8px 32px;
@@ -185,18 +182,9 @@ img {
     margin-bottom: 20px;
   }
   
-  .hamburger {
-    color: white;
-  }
-  
-  .img-circle {
-    border-radius: 1000px;
-  }
-  
-  p {
-    width: 480px;
-    text-align: left;
-  }
+.hamburger {
+  color: white;
+}
   
 #contact-section {
   background-color: rgba(255, 255, 255, 0.747);
@@ -204,11 +192,11 @@ img {
   text-align: center;
   text-align: justify;
 }
-  .form-group {
-    display: block;
-    margin: auto;
-    margin-left: 3%;
-  }
+
+.form-group {
+  display: block;
+  margin: auto;
+}
 
   .text {
     text-align: center;
@@ -233,15 +221,16 @@ img {
     background-color: rgb(232, 232, 232);
     border-radius: 100px;
   }
+  
   .message.from-me{
     text-align: right;
   }
+
   .message.from-me .message-inner {
     background-color: blue;
     color: #fff;
   }
-  
-  
+
   @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
