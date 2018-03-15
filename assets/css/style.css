@@ -1,8 +1,7 @@
 
-#loginPage {
+body {
     margin-bottom: 160px;
-    /* background: url(../images/login-background1.png); */
-    background-color: blue;
+    background: url(../images/login-background1.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
