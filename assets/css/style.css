@@ -42,6 +42,7 @@ body {
 
 #signInBTN {
     color: rgb(255, 254, 254);
+    font-size: 20px;
     font-family: 'Coda Caption', sans-serif;
     margin-top: 30px;
     position: absolute;
