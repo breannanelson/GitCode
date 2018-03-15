@@ -197,6 +197,16 @@ img {
     text-align: left;
   }
   
+  .form-group {
+    display: block;
+    margin: auto;
+    margin-left: 3%;
+  }
+
+  .form {
+    background-color: rgba(255, 255, 255, 0.753);
+  }
+
   .message{
     width: auto;
     margin-bottom: 2px;
