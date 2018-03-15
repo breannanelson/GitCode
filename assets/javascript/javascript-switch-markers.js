@@ -220,7 +220,6 @@ function initMap() {
         // '<p>About this project : <b>' + message + '</b></p> ' +
         // '<p>They will be working until ' + time + '</p> ' +
         // '<p>If you would like to collaborate, click the button below.</p>' +
-        
     
         geocoder.geocode( {'address': address}, function(results, status) {
             //if status is ok enable set marker function
@@ -247,9 +246,10 @@ function initMap() {
                         //gets name of location
                         var objDesc = object.results[i].name
                         //appends to bottom of page to create list of nearby locations
-                        var objName = $('<div id="obj"><img id="place-icon" src="' + icon + '" width="100px" height="100px"> ' + objDesc + '</div>' +
+                        var objName = $('<div id="obj"><img id="place-icon" src="' + icon + '" width="100px" height="100px"><b> ' + objDesc + '</b></div>' +
                         '<div id="located">' + object.results[i].vicinity +'</div>' +
-                        "<div id='rating'>Rating: " + object.results[i].rating + "/5 </div>")
+                        "<div id='rating'>Rating: " + object.results[i].rating + "/5 </div>" +
+                        "<hr>");
                         $('#lists').append(objName);
 
                         function createMarker(place) {
@@ -270,18 +270,26 @@ function initMap() {
                                 contentString
                             });
                             
-                            //add listener to markers
-                            // marker.addListener('click', function() {
-                            //     //opens info window on click
-                            //     infowindow.open(map, marker);
-                            //     //allows user to type into textbox and appends to chat
-                            //     $('#chat').on('click', function(){
-                            //         var convo = $("#chatroom").val();
-                            //         $("#convoBox").append("<p>" + convo + "</p>")
-                            //     });
-                            // });
+                            // add listener to markers
+                            marker.addListener('click', function() {
+                                //opens info window on click
+                                infowindow.open(map, marker);
+                                //allows user to type into textbox and appends to chat
+                                // $('#chat').on('click', function(){
+                                //     var convo = $("#chatroom").val();
+                                //     $("#convoBox").append("<p>" + convo + "</p>")
+                                // });
+                                
+                            });
                         };
                         createMarker(object.results[i])
+                        $("#messagingLink").on("click", function () {
+                          $("#profilePage").css("display", "none");
+                          $("#mapSpace").css("display", "none");
+                          $("#jobsPage").css("display", "none");
+                          $("#messagePage").css("display", "block");
+                          $("#contactPage").css("display", "none");
+                      });
                     }
                 }) 
             } else {

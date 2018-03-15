@@ -1,7 +1,7 @@
 body {
   height: 100%;
   width: 100%;
-  background: url(../images/login-background3.jpg);
+  background-image: url('../images/login-background3.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -11,10 +11,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+#messagesArea {
+  display: block;
+  margin: auto;
+}
+
 #submitBTN {
   display: block;
   margin: auto;
   margin-top: 2%;
+}
+
+#about {
+  background-color: #000000bd;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  border: 5px solid black;
 }
 
 img {
@@ -28,6 +41,8 @@ img {
   background-color: rgba(255, 255, 255, 0.753);
   padding: 20px;
   width: 50%;
+  display: block;
+  margin: auto;
 }
 
 #loginPage {
@@ -89,9 +104,9 @@ img {
 
 #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
   content: "";
-  background: url(../images/profile-background2.jpg);
-  background-size: cover;
+  background-image: url('../images/profile-background2.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   opacity: 1;
   position: absolute;
@@ -99,11 +114,18 @@ img {
   color: #fff;
 }
 
+#chat-input {
+  width: 100%;
+  line-height: 30px;
+}
+
 #chat-send {
   background-color:#0000007d;
   padding: 10px;
   display:block;
   margin: auto;
+  color: white;
+  margin-top:2%;
 }
 
 #chat-messages-all {
@@ -192,6 +214,7 @@ img {
   padding: 20px;
   text-align: center;
   text-align: justify;
+  margin-bottom: 5%;
 }
 
 .form-group {

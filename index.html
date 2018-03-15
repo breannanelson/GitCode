@@ -18,11 +18,13 @@
 </head>
 
 <body>
+
+
     <div id="loginPage" style="display: none;">
         <div class="jumbotron" id='loginJumbo'>
             <h1 id="title">Co-Code</h1>
             <button id='signInBTN' class="hbtn hb-border-off3">Sign In</button>
-            <p style='text-align: center;padding:5px;font-family:"Julius Sans One", cursive;color:white;'>connect . code . create</p>
+            <p style='text-align: center;padding:5px;font-family:"Julius Sans One", cursive;color:white;'>connect.code.create</p>
         </div>
     </div>
 
@@ -36,6 +38,7 @@
                 <p id="messagingLink">Messaging</p>
                 <p id="contactLink">Contact</p>
                 <p id="signOutBTN">Logout</p>
+
             </div>
         </div>
 
@@ -80,7 +83,7 @@
                         </div> -->
 
                         <button type='submit' value='Encode' id='submitBTN' class="hbtn hb-border-off3">Search</button>
-                        <div id="list" style="text-align: center;background-color:white;"></div>
+                        <div id="list" style="text-align: center;background-color:white;">Nearby Locations:</div>
                     </div>
                 </div>
                 <!-- map initiated -->
@@ -109,7 +112,7 @@
                     <input type="text" id="state">
                     <br>
                     <br>
-                    <button class="submit" id='jobSearchBTN'>SUBMIT</button>
+                    <button class="submit" id='jobSearchBTN' class="hbtn hb-border-off3">SUBMIT</button>
                 </div>
             </div>
             <div class="row">
@@ -127,7 +130,7 @@
         <!-- message page begins -->
         <div id="messagePage" style="display: none;">
             <div class="row">
-                <div class="col-md-8">
+                <div id='messagesArea' class="col-md-8">
                     <div id="chat-messages-all"></div>
                     <form>
                         <input id="chat-input" type="text-box">
@@ -168,7 +171,7 @@
                             <h6 class="card-subtitle mb-2 text-muted">Back-end Development</h6>
                             <h6 class="card-subtitle mb-2 text-muted">Github API & Messaging</h6>
                             <!-- <p class="card-text">info about project responsibilities</p> -->
-                            <p>Email : breanna_a_nelson@hotmail.com</p>
+                            <p style='font-size: 15px;'>Email : breanna_a_nelson@hotmail.com</p>
                             <a href="https://github.com/BreannaNelson" class="card-link">Github</a>
                         </div>
                     </div>
@@ -179,7 +182,7 @@
                             <h6 class="card-subtitle mb-2 text-muted">Back-end Development</h6>
                             <h6 class="card-subtitle mb-2 text-muted">Google Maps API & Authentic Jobs API</h6>
                             <!-- <p class="card-text">info about project responsibilities</p> -->
-                            <p>Email : elzeeandtheweb@gmail.com</p>
+                            <p style='font-size: 15px;'>Email : elzeeandtheweb@gmail.com</p>
                             <a href="https://github.com/Lauras5" class="card-link">Github</a>
                         </div>
                     </div>
@@ -190,7 +193,7 @@
                             <h6 class="card-subtitle mb-2 text-muted">Front-end Development</h6>
                             <!-- <h6 class="card-subtitle mb-2 text-muted"></h6> -->
                             <!-- <p class="card-text">info about project responsibilities</p> -->
-                            <p>Email : reedchorn@gmail.com</p>
+                            <p style='font-size: 15px;'>Email : reedchorn@gmail.com</p>
                             <a href="https://github.com/ReedChorn" class="card-link">Github</a>
                         </div>
                     </div>
@@ -201,14 +204,14 @@
                             <h6 class="card-subtitle mb-2 text-muted">Front-end Development</h6>
                             <!-- <h6 class="card-subtitle mb-2 text-muted"></h6> -->
                             <!-- <p class="card-text">info about project responsibilities</p> -->
-                            <p>Email : matthewpaulino@gmail.com</p>
+                            <p style='font-size: 15px;'>Email : matthewpaulino@gmail.com</p>
                             <a href="https://github.com/MatthewPaulino" class="card-link">Github</a>
                         </div>
                     </div>
                     <br>
                     <br>
                     <div class="row">
-                        <p class="about">About This Project:
+                        <p class="about" id='about'>About This Project:
                             <br> CoCode gives developers a means to find a productive environment to work on projects & create
                             meeting spaces for other developers to converge on projects or to just work with others with
                             similar interests. CoCode also allows connection with other users through chat and job search
@@ -217,11 +220,7 @@
                 </div>
             </div>
         </div>
-        <footer class="footer">
-                <span class="text-muted" font-color="white">Falu Designs Copyright 2018</span>
-        </footer>
     </div>
-
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>

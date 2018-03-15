@@ -118,7 +118,6 @@ var initApp = function () {
 
                 count = 1;
 
-
                 $("#profileLink").on("click", function () {
                     $("#profilePage").css("display", "block");
                     $("#mapSpace").css("display", "none");
@@ -171,7 +170,6 @@ var initApp = function () {
             $("#contactPage").css("display", "none");
             localStorage.setItem("count", "0");
             // Adds login button again
-
 
         }
     }, function (error) {
