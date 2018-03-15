@@ -220,7 +220,6 @@ function initMap() {
         // '<p>About this project : <b>' + message + '</b></p> ' +
         // '<p>They will be working until ' + time + '</p> ' +
         // '<p>If you would like to collaborate, click the button below.</p>' +
-        
     
         geocoder.geocode( {'address': address}, function(results, status) {
             //if status is ok enable set marker function
@@ -280,16 +279,17 @@ function initMap() {
                                 //     var convo = $("#chatroom").val();
                                 //     $("#convoBox").append("<p>" + convo + "</p>")
                                 // });
-                                $("#messagingLink").on("click", function () {
-                                  $("#profilePage").css("display", "none");
-                                  $("#mapSpace").css("display", "none");
-                                  $("#jobsPage").css("display", "none");
-                                  $("#messagePage").css("display", "block");
-                                  $("#contactPage").css("display", "none");
-                              });
+                                
                             });
                         };
                         createMarker(object.results[i])
+                        $("#messagingLink").on("click", function () {
+                          $("#profilePage").css("display", "none");
+                          $("#mapSpace").css("display", "none");
+                          $("#jobsPage").css("display", "none");
+                          $("#messagePage").css("display", "block");
+                          $("#contactPage").css("display", "none");
+                      });
                     }
                 }) 
             } else {
