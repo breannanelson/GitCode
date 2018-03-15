@@ -10,7 +10,7 @@
 
 
 body {
-    background: url(../images/login-background1.png);
+    background: url(../images/login-background2.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -19,7 +19,7 @@ body {
   
   body::after {
     content: "";
-    background: url(../images/login-background2.jpg);
+    background: url(../images/login-background1.png);
     opacity: 0.5;
     top: 0;
     left: 0;
