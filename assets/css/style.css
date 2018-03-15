@@ -1,6 +1,4 @@
 body {
-  width:100%;
-  height: 100%;
   background: url(../images/login-background3.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -92,20 +90,18 @@ img {
 
 
 #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
-    width:100%;
-    height: 100%;
-    content: "";
-    background: url(../images/profile-background2.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
-    color: #fff;
+  content: "";
+  background: url(../images/profile-background2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+  color: #fff;
 }
 
 
@@ -153,34 +149,34 @@ img {
   padding-top: 60px;
 }
   
-  .sidenav p {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
+.sidenav p {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
   
-  .sidenav p:hover {
-    color: #f1f1f1;
-    cursor: pointer;
-  }
+.sidenav p:hover {
+  color: #f1f1f1;
+  cursor: pointer;
+}
   
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
   
-  #main {
-    background-color:#111;
-    transition: margin-left .5s;
-    padding: 16px;
-    margin-bottom: 20px;
-  }
+#main {
+  background-color:#111;
+  transition: margin-left .5s;
+  padding: 16px;
+  margin-bottom: 20px;
+}
   
 .hamburger {
   color: white;
@@ -198,40 +194,43 @@ img {
   margin: auto;
 }
 
-  .text {
-    text-align: center;
-    font-weight: bold;
-    font-size: 22px;
-    color: #4b5b80;
-    font-family: 'Julius Sans One';
-  }
+.text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: #4b5b80;
+  font-family: 'Julius Sans One';
+}
 
-  .form {
-    background-color: rgba(255, 255, 255, 0.753);
-    padding: 20px;
-  }
+.form {
+  background-color: rgba(255, 255, 255, 0.753);
+  padding: 20px;
+  height: 550px;
+}
 
-  .message{
-    width: auto;
-    margin-bottom: 2px;
-  }
-  .message-inner {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: rgb(232, 232, 232);
-    border-radius: 100px;
-  }
-  
-  .message.from-me{
-    text-align: right;
-  }
+.message{
+  width: auto;
+  margin-bottom: 2px;
+}
 
-  .message.from-me .message-inner {
-    background-color: blue;
-    color: #fff;
-  }
+.message-inner {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgb(232, 232, 232);
+  border-radius: 100px;
+}
 
-  @media screen and (max-height: 450px) {
+.message.from-me{
+  text-align: right;
+}
+
+.message.from-me .message-inner {
+  background-color: blue;
+  color: #fff;
+}
+
+@media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-  }
+}
+
