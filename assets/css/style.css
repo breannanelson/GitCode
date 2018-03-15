@@ -1,6 +1,6 @@
 
 
-#profilePage {
+#loginPage {
     width:100%;
     height: 100%;
     background: url(../images/login-background3.jpg);
@@ -10,7 +10,7 @@
     background-size: cover;
   }
   
-  #profilePage::after {
+  #loginPage::after {
     width:100%;
     height: 100%;
     content: "";
