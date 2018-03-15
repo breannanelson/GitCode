@@ -7,7 +7,7 @@ body {
   background-position: center;
   background-size: cover;
   position: absolute;
-  z-index: -1; 
+  z-index: -2; 
   font-family: "Roboto", sans-serif;
 }
 
@@ -88,8 +88,6 @@ img {
 } 
 
 #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
-  width: 100%;
-  height: 100%;
   content: "";
   background: url(../images/profile-background2.jpg);
   background-size: cover;
@@ -252,3 +250,4 @@ img {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
