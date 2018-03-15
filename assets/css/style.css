@@ -30,11 +30,17 @@ body {
   border: 5px solid black;
 }
 
+#bio {
+  text-align: center;
+}
+
 img {
-  vertical-align: middle;
+  /* vertical-align: middle; */
   border-style: none;
   padding: 20px;
   width: 300px;
+  display: block;
+  margin: auto;
 }
 
 #account-details {
@@ -273,4 +279,3 @@ img {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
