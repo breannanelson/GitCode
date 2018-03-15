@@ -271,16 +271,16 @@ function initMap() {
                                 contentString
                             });
                             
-                            //add listener to markers
-                            // marker.addListener('click', function() {
-                            //     //opens info window on click
-                            //     infowindow.open(map, marker);
-                            //     //allows user to type into textbox and appends to chat
-                            //     $('#chat').on('click', function(){
-                            //         var convo = $("#chatroom").val();
-                            //         $("#convoBox").append("<p>" + convo + "</p>")
-                            //     });
-                            // });
+                            // add listener to markers
+                            marker.addListener('click', function() {
+                                //opens info window on click
+                                infowindow.open(map, marker);
+                                //allows user to type into textbox and appends to chat
+                                // $('#chat').on('click', function(){
+                                //     var convo = $("#chatroom").val();
+                                //     $("#convoBox").append("<p>" + convo + "</p>")
+                                // });
+                            });
                         };
                         createMarker(object.results[i])
                     }
