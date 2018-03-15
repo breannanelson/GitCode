@@ -201,6 +201,16 @@ img {
   margin: auto;
 }
 
+#place-icon {
+  width: 75px;
+  height:75px;
+}
+
+#lists {
+  border: 5px solid #7b9eb0;
+  border-radius: 5px;
+
+}
 .text {
   text-align: center;
   font-weight: bold;
@@ -213,6 +223,8 @@ img {
   background-color: rgba(255, 255, 255, 0.753);
   padding: 20px;
   height: 550px;
+  width: 290px;
+  border-radius: 6px;
 }
 
 .message{
@@ -240,4 +252,3 @@ img {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
