@@ -1,5 +1,7 @@
 body {
-  background: url(../images/login-background3.jpg);
+  height: 100%;
+  width: 100%;
+  background: url('../images/login-background3.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -69,11 +71,9 @@ img {
   font-family: 'Julius Sans One', cursive;
 } 
 
-
 .hbtn i {
   padding-right: 8px;
 } 
-
 
 .hb-border-off3 {
   border-color: rgb(255, 255, 255);
@@ -81,32 +81,37 @@ img {
   transition: border-top-color 0.1s linear 0s, border-right-color 0.1s linear 0.07s, border-bottom-color 0.1s linear 0.14s, border-left-color 0.1s linear 0.21s;
 } 
 
-
 .hb-border-off3:hover {
   border-color: initial;
   border-color: transparent;
   transition: border-top-color 0.1s linear 0s, border-right-color 0.1s linear 0.07s, border-bottom-color 0.1s linear 0.14s, border-left-color 0.1s linear 0.21s;
 } 
 
-
 #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
   content: "";
-  background: url(../images/profile-background2.jpg);
+  background: url('../images/profile-background2.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   opacity: 1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   position: absolute;
   z-index: -1;   
   color: #fff;
 }
 
+#chat-send {
+  background-color:#0000007d;
+  padding: 10px;
+  display:block;
+  margin: auto;
+}
 
 #chat-messages-all {
-    color: #fff;
+  color: #fff;
+  background-color: #0000007d;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px
 }
 
 /* Always set the map height explicitly to define the size of the div
