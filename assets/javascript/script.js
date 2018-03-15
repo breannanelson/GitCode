@@ -36,7 +36,7 @@ $("#signInBTN").on("click", function () {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        localStorage.setItem('name', 'true')
+       
     }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -64,7 +64,7 @@ var initApp = function () {
 
     // Track the Auth state across all your pages:
     firebase.auth().onAuthStateChanged(function (user) {
-        if (user || localStorage.getItem('name') === 'true') {
+        if (user) {
             $("#loginPage").css("display", "none");
             $(".container").css("display", "block");
             $("#profilePage").css("display", "block");
