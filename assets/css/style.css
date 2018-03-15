@@ -1,28 +1,28 @@
 
 
-#loginPage {
+/* #loginPage {
     width:100%;
     height: 100%;
-    background: url(../images/login-background1.png);
+    background: url(../images/login-background3.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-  }
+  } */
   
-  /* #loginPage::after {
+  #loginPage::after {
     width:100%;
     height: 100%;
     content: "";
-    background: url(../images/login-background3.jpg);
-    opacity: 0.4;
+    background: url(../images/login-background1.png);
+    opacity: 0.2;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
     z-index: -1;   
-  } */
+  }
 
 #title {
     color: rgb(255, 255, 255);
