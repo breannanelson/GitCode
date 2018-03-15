@@ -22,7 +22,10 @@ var count = 0;
 // Creates an instance of the GitHub provider object
 var provider = new firebase.auth.GithubAuthProvider();
 
-$("#loginPage").css("display", "block");
+if(count === 0) {
+    $("#loginPage").css("display", "block");
+}
+
 
 
 // onclick event for Sign In button
