@@ -238,7 +238,7 @@ function initMap() {
                     method : 'GET'
                 }).then(function(object) {
                     console.log(object)
-                    var listView = $('<div id="lists">Nearby Locations : </div>')
+                    var listView = $('<div id="lists"><b>Nearby Locations : </b></div>')
                     $('#list').prepend(listView)
                     var resultsLength = object.results.length 
                     for (var i = 0; i < resultsLength; i++) {
@@ -247,7 +247,9 @@ function initMap() {
                         //gets name of location
                         var objDesc = object.results[i].name
                         //appends to bottom of page to create list of nearby locations
-                        var objName = $('<div id="obj"><img src="' + icon + '" width="100px" height="100px"> ' + objDesc + '</div><br>')
+                        var objName = $('<div id="obj"><img id="place-icon" src="' + icon + '" width="100px" height="100px"> ' + objDesc + '</div>' +
+                        '<div id="located">' + object.results[i].vicinity +'</div>' +
+                        "<div id='rating'>Rating: " + object.results[i].rating + "/5 </div>")
                         $('#lists').append(objName);
 
                         function createMarker(place) {
