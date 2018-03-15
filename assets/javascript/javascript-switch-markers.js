@@ -5,7 +5,7 @@ var address;
 var radius;
 var type;
 var newLoc;
-var name;
+// var name;
 var time;
 var languages;
 var message;
@@ -211,16 +211,16 @@ function initMap() {
         type = 'starbucks|panerabread|mcdonalds|barnesandnoble|arbys|applebees|brewsterscoffee|cornerbakery|dunkindonuts|ihop|leessandwiches|peetscoffee|tullyscoffee|buffalowildwings|peetscoffee'
 
         //user info to be used at a later time
-        name = $('#name').val().trim();
-        time = $('#time').val().trim();
-        languages = $('#languages').val().trim();
-        message = $('#projInfo').val().trim();
-        var contentString = '<p><b>My Info:</b></p><p><b>' + name + '</b></p>'+
-        '<p>Working with :<b> '+ languages +'</b></p> ' +
-        '<p>About this project : <b>' + message + '</b></p> ' +
-        '<p>They will be working until ' + time + '</p> ' +
-        '<p>If you would like to collaborate, click the button below.</p>' +
-        '<button id="messanger">Join Chatroom for this Project!</button>';
+        // name = $('#name').val().trim();
+        // time = $('#time').val().trim();
+        // languages = $('#languages').val().trim();
+        // message = $('#projInfo').val().trim();
+        var contentString = '<button id="messagingLink">Join Chatroom for this Project!</button>';
+        // '<p>Working with :<b> '+ languages +'</b></p> ' +
+        // '<p>About this project : <b>' + message + '</b></p> ' +
+        // '<p>They will be working until ' + time + '</p> ' +
+        // '<p>If you would like to collaborate, click the button below.</p>' +
+        
     
         geocoder.geocode( {'address': address}, function(results, status) {
             //if status is ok enable set marker function
@@ -238,7 +238,7 @@ function initMap() {
                     method : 'GET'
                 }).then(function(object) {
                     console.log(object)
-                    var listView = $('<div id="lists">Nearby Locations : </div>')
+                    var listView = $('<div id="lists"><b>Nearby Locations : </b></div>')
                     $('#list').prepend(listView)
                     var resultsLength = object.results.length 
                     for (var i = 0; i < resultsLength; i++) {
@@ -247,7 +247,9 @@ function initMap() {
                         //gets name of location
                         var objDesc = object.results[i].name
                         //appends to bottom of page to create list of nearby locations
-                        var objName = $('<div id="obj"><img src="' + icon + '" width="100px" height="100px"> ' + objDesc + '</div><br>')
+                        var objName = $('<div id="obj"><img id="place-icon" src="' + icon + '" width="100px" height="100px"> ' + objDesc + '</div>' +
+                        '<div id="located">' + object.results[i].vicinity +'</div>' +
+                        "<div id='rating'>Rating: " + object.results[i].rating + "/5 </div>")
                         $('#lists').append(objName);
 
                         function createMarker(place) {
@@ -265,21 +267,19 @@ function initMap() {
                                 content: "<div id='place'><b>" + objDesc + "</b></div>" +
                                 "<div id='located'>" + object.results[i].vicinity + " </div>" +
                                 "<div id='rating'>Rating: " + object.results[i].rating + "/5 </div>" +
-                                "<input id='chatroom' type='text-box' placeholder='join chatroom'>" +
-                                "<button id='messageBtn'>Message</button>" +
                                 contentString
                             });
                             
                             //add listener to markers
-                            marker.addListener('click', function() {
-                                //opens info window on click
-                                infowindow.open(map, marker);
-                                //allows user to type into textbox and appends to chat
-                                $('#chat').on('click', function(){
-                                    var convo = $("#chatroom").val();
-                                    $("#convoBox").append("<p>"+convo+"</p>")
-                                });
-                            });
+                            // marker.addListener('click', function() {
+                            //     //opens info window on click
+                            //     infowindow.open(map, marker);
+                            //     //allows user to type into textbox and appends to chat
+                            //     $('#chat').on('click', function(){
+                            //         var convo = $("#chatroom").val();
+                            //         $("#convoBox").append("<p>" + convo + "</p>")
+                            //     });
+                            // });
                         };
                         createMarker(object.results[i])
                     }
@@ -337,7 +337,6 @@ $('#jobSearchBTN').on('click', function(){
           $('.jobArr').append(jobList)
       }
   })
-
 })
 
 function openNav() {

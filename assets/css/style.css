@@ -1,8 +1,6 @@
-
-
 body {
-  width:100%;
   height: 100%;
+  width: 100%;
   background: url(../images/login-background3.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -10,6 +8,13 @@ body {
   background-size: cover;
   position: absolute;
   z-index: -2; 
+  font-family: "Roboto", sans-serif;
+}
+
+#submitBTN {
+  display: block;
+  margin: auto;
+  margin-top: 2%;
 }
 
 img {
@@ -32,46 +37,43 @@ img {
 }
 
 #title {
-    color: rgb(63, 62, 62);
-    font-size: 70px;
-    text-shadow: 3px 3px 3px #566a7c;
-    font-family: 'Julius Sans One', cursive;
-    font-weight: bold;
-  }
+  color: rgb(63, 62, 62);
+  font-size: 70px;
+  text-shadow: 3px 3px 3px #566a7c;
+  font-family: 'Julius Sans One', cursive;
+  font-weight: bold;
+}
   
-  #loginJumbo {
-    background-color: rgba(255, 255, 255, 0.75);
-    width: 100%;
-    height: 180px;
-    display: block;
-    margin: auto;
-    margin-top: 10%;
-  }
+#loginJumbo {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  height: 180px;
+  display: block;
+  margin: auto;
+  margin-top: 10%;
+}
   
-  
-  .hbtn {
-    box-shadow: 3px 3px 3px #363636;
-    position: relative;
-    box-sizing: border-box;
-    display: inline-block;
-    overflow: hidden;
-    padding: 10px 20px;
-    margin: 0px 3px 6px;
-    text-align: center;
-    border: 5px solid rgb(255, 255, 255);
-    background-color: #4b5b80;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    white-space: nowrap;
-    z-index: 0;
-    font-family: 'Julius Sans One', cursive;
-  } 
-
+.hbtn {
+  box-shadow: 3px 3px 3px #363636;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 20px;
+  margin: 0px 3px 6px;
+  text-align: center;
+  border: 5px solid rgb(255, 255, 255);
+  background-color: #4b5b80;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  z-index: 0;
+  font-family: 'Julius Sans One', cursive;
+} 
 
 .hbtn i {
   padding-right: 8px;
 } 
-
 
 .hb-border-off3 {
   border-color: rgb(255, 255, 255);
@@ -79,52 +81,53 @@ img {
   transition: border-top-color 0.1s linear 0s, border-right-color 0.1s linear 0.07s, border-bottom-color 0.1s linear 0.14s, border-left-color 0.1s linear 0.21s;
 } 
 
-
 .hb-border-off3:hover {
   border-color: initial;
   border-color: transparent;
   transition: border-top-color 0.1s linear 0s, border-right-color 0.1s linear 0.07s, border-bottom-color 0.1s linear 0.14s, border-left-color 0.1s linear 0.21s;
 } 
 
-
 #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
-    width:100%;
-    height: 100%;
-    content: "";
-    background: url(../images/profile-background2.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
-    color: #fff;
+  content: "";
+  background: url(../images/profile-background2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 1;
+  position: absolute;
+  z-index: -1;   
+  color: #fff;
 }
 
+#chat-send {
+  background-color:#0000007d;
+  padding: 10px;
+  display:block;
+  margin: auto;
+}
 
 #chat-messages-all {
-    color: #fff;
+  color: #fff;
+  background-color: #0000007d;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px
 }
-
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
- #map {
-    height: 500px;
-    width: 750px;
-    margin: 20px;
-    background-color:rgba(255, 255, 255, 0.76);
-    padding: 20px;
-  }
+#map {
+  height: 500px;
+  width: 750px;
+  margin: 20px;
+  border: 6px solid white;
+}
   
-  .jumbotron {
-    width: 100%;
-    text-align: center;
-    margin-top: 5%;
-  }
+.jumbotron {
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+}
 
 #contact-image {
   height: 150px; 
@@ -132,70 +135,57 @@ img {
   border-radius: 1000px;
 }
   
-  .card {
-    display: inline-block;
-    margin: 10px;
-    width: 345px;
-  }
+.card {
+  display: inline-block;
+  margin: 10px;
+  width: 345px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
   
-  body {
-    font-family: "Roboto", sans-serif;
-  }
+.sidenav p {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
   
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
+.sidenav p:hover {
+  color: #f1f1f1;
+  cursor: pointer;
+}
   
-  .sidenav p {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
   
-  .sidenav p:hover {
-    color: #f1f1f1;
-    cursor: pointer;
-  }
+#main {
+  background-color:#111;
+  transition: margin-left .5s;
+  padding: 16px;
+  margin-bottom: 20px;
+}
   
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  #main {
-    background-color:#111;
-    transition: margin-left .5s;
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .hamburger {
-    color: white;
-  }
-  
-  .img-circle {
-    border-radius: 1000px;
-  }
-  
-  p {
-    width: 480px;
-    text-align: left;
-  }
+.hamburger {
+  color: white;
+}
   
 #contact-section {
   background-color: rgba(255, 255, 255, 0.747);
@@ -203,36 +193,61 @@ img {
   text-align: center;
   text-align: justify;
 }
-  .form-group {
-    display: block;
-    margin: auto;
-    margin-left: 3%;
-  }
 
-  .form {
-    background-color: rgba(255, 255, 255, 0.753);
-  }
+.form-group {
+  display: block;
+  margin: auto;
+}
 
-  .message{
-    width: auto;
-    margin-bottom: 2px;
-  }
-  .message-inner {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: rgb(232, 232, 232);
-    border-radius: 100px;
-  }
-  .message.from-me{
-    text-align: right;
-  }
-  .message.from-me .message-inner {
-    background-color: blue;
-    color: #fff;
-  }
-  
-  
-  @media screen and (max-height: 450px) {
+#place-icon {
+  width: 75px;
+  height:75px;
+}
+
+#lists {
+  border: 5px solid #7b9eb0;
+  border-radius: 5px;
+
+}
+.text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: #4b5b80;
+  font-family: 'Julius Sans One';
+}
+
+.form {
+  background-color: rgba(255, 255, 255, 0.753);
+  padding: 20px;
+  height: 550px;
+  width: 290px;
+  border-radius: 6px;
+}
+
+.message{
+  width: auto;
+  margin-bottom: 2px;
+}
+
+.message-inner {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgb(232, 232, 232);
+  border-radius: 100px;
+}
+
+.message.from-me{
+  text-align: right;
+}
+
+.message.from-me .message-inner {
+  background-color: blue;
+  color: #fff;
+}
+
+@media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-  }
+}
+

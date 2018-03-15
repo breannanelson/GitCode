@@ -18,13 +18,11 @@
 </head>
 
 <body>
-
-
     <div id="loginPage" style="display: none;">
         <div class="jumbotron" id='loginJumbo'>
             <h1 id="title">Co-Code</h1>
-            <p>connect.code.create</p>
             <button id='signInBTN' class="hbtn hb-border-off3">Sign In</button>
+            <p style='text-align: center;padding:5px;font-family:"Julius Sans One", cursive;color:white;'>connect . code . create</p>
         </div>
     </div>
 
@@ -38,7 +36,6 @@
                 <p id="messagingLink">Messaging</p>
                 <p id="contactLink">Contact</p>
                 <p id="signOutBTN">Logout</p>
-
             </div>
         </div>
 
@@ -63,19 +60,13 @@
             <div class="row">
                 <div class="col-md">
                     <div class="form">
-                        <div class="text">My Current Location</div>
+                        <div class="text">Location & Info</div>
                         <br>
                         <div class="form-group">
                             <label for="address">Enter Zip Code: </label>
                             <input type="text" class="form-control" id="address">
                         </div>
-                        <div class="text">My Info</div>
-                        <br>
-                        <div class="form-group">
-                            <label for="name"> Name :</label>
-                            <input type="text" class="form-control" id="name" placeholder="James Bond">
-                        </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="time"> Working Until : </label>
                             <input type="time" class="form-control" id="time" placeholder="10pm">
                         </div>
@@ -86,24 +77,21 @@
                         <div class="form-group">
                             <label for="radius"> Project Info : </label>
                             <input type="textbox" class="form-control" id="projInfo" placeholder="Explain the project...">
-                        </div>
+                        </div> -->
 
                         <button type='submit' value='Encode' id='submitBTN' class="hbtn hb-border-off3">Search</button>
-
+                        <div id="list" style="text-align: center;background-color:white;"></div>
                     </div>
-
-
                 </div>
+                <!-- map initiated -->
                 <div class="col-md">
                     <div id="map"></div>
                     <div id='convoBox'></div>
-                    <button id="lightMap">Light Map</button>
-                    <button id="darkMap">Dark Map</button>
+                    <button id="lightMap" class='hbtn hb-border-off3'>Light Map</button>
+                    <button id="darkMap" class='hbtn hb-border-off3'>Dark Map</button>
                 </div>
             </div>
-            <div class="row">
-                <div id="list"></div>
-            </div>
+            
         </div>
         <!-- map page ends -->
 
@@ -142,7 +130,7 @@
                 <div class="col-md-8">
                     <div id="chat-messages-all"></div>
                     <form>
-                        <input id="chat-input" type="text">
+                        <input id="chat-input" type="text-box">
                         <button id="chat-send">Enter</button>
                     </form>
                 </div>
@@ -173,18 +161,18 @@
             <br>
             <div id="contact-section">
                 <div class="row">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 15rem;text-align: center;">
                         <div class="card-body">
                             <img src="assets/images/bre-profile-pic.jpg" id="contact-image" class="center">
                             <h5 class="card-title">Breanna Nelson</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Back-end Development</h6>
                             <h6 class="card-subtitle mb-2 text-muted">Github API & Messaging</h6>
                             <!-- <p class="card-text">info about project responsibilities</p> -->
-                            <p>Email : breannanelson@gmail.com</p>
+                            <p>Email : breanna_a_nelson@hotmail.com</p>
                             <a href="https://github.com/BreannaNelson" class="card-link">Github</a>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 15rem;text-align: center;">
                         <div class="card-body">
                             <img src="assets/images/laura-profile-pic.png" id="contact-image" class="center">
                             <h5 class="card-title">Laura Salcido</h5>
@@ -195,7 +183,7 @@
                             <a href="https://github.com/Lauras5" class="card-link">Github</a>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 15rem;text-align: center;">
                         <div class="card-body">
                             <img src="assets/images/reed-profile-pic.jpg" id="contact-image" class="center">
                             <h5 class="card-title">Reed Chorn</h5>
@@ -206,7 +194,7 @@
                             <a href="https://github.com/ReedChorn" class="card-link">Github</a>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 15rem; text-align: center;">
                         <div class="card-body">
                             <img src="#" id="contact-image" class="center">
                             <h5 class="card-title">Matthew Paulino</h5>
@@ -229,18 +217,22 @@
                 </div>
             </div>
         </div>
+        <footer class="footer">
+                <span class="text-muted" font-color="white">Falu Designs Copyright 2018</span>
+        </footer>
     </div>
 
 
-
-
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <!-- jQuery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
+    <!-- Google Maps Init -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOASDIikd8pGiO3vLaVh4bhuhpOr3ZAQY&callback=initMap" async defer></script>
     <!-- MomentJS -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOASDIikd8pGiO3vLaVh4bhuhpOr3ZAQY&callback=initMap" async
-        defer></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- JS files -->
     <script src="./assets/javascript/script.js"></script>
     <script src="./assets/javascript/messaging.js"></script>
     <script src="./assets/javascript/javascript-switch-markers.js"></script>
