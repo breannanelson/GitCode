@@ -113,7 +113,7 @@ var initApp = function () {
                 });
 
                 if (count === 0) {
-                    $('#account-details').append("<div id='bio'><img src='" + photoURL + "' alt='Profile Photo'><br>" + displayName + "<br>" + email + "<br></div>");
+                    $('#account-details').append("<div id='bio'><b class='text'>"+displayName+"</b><img src='" + photoURL + "' alt='Profile Photo'><br>" + email + "<br></div>");
                 }
 
                 count = 1;
@@ -180,15 +180,3 @@ var initApp = function () {
 // Event listener for when the page is loaded.
 // Runs the initApp to determine if the user is logged in or not
 window.addEventListener('load', initApp);
-
-
-
-
-
-
-
-
-
-
-
-
