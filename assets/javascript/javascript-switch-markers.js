@@ -269,7 +269,7 @@ function initMap() {
                                 "<div id='rating'>Rating: " + object.results[i].rating + "/5 </div>" +
                                 contentString
                             });
-                            createMarker(object.results[i])
+                            
                           
 //                             $("#messagingLink").on("click", function () {
 //                               $("#profilePage").css("display", "none");
@@ -290,7 +290,7 @@ function initMap() {
                                 
                             });
                         };
-                        
+                        createMarker(object.results[i])
                     }
                 }) 
             } else {
