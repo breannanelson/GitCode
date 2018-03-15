@@ -2,6 +2,7 @@
 body {
     margin-bottom: 160px;
     background: url(../images/login-background1.png);
+    background-color: rgba(0, 0, 0, 0.568) 10px 10px no-repeat;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
