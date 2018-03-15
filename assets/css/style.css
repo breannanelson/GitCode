@@ -1,22 +1,35 @@
 
 
 body {
-    width:100%;
-    height: 100%;
-    background: url(../images/login-background3.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    z-index: -2; 
-  }
-  
-  #loginPage {
-    width:100%;
-    height: 100%;
-    content: "";
-  }
+  width:100%;
+  height: 100%;
+  background: url(../images/login-background3.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  z-index: -2; 
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  padding: 20px;
+  width: 300px;
+}
+
+#account-details {
+  background-color: rgba(255, 255, 255, 0.753);
+  padding: 20px;
+  width: 50%;
+}
+
+#loginPage {
+  width:100%;
+  height: 100%;
+  content: "";
+}
 
 #title {
     color: rgb(63, 62, 62);
@@ -24,7 +37,6 @@ body {
     text-shadow: 3px 3px 3px #566a7c;
     font-family: 'Julius Sans One', cursive;
     font-weight: bold;
-    
   }
   
   #loginJumbo {
@@ -80,7 +92,9 @@ body {
     height: 100%;
     content: "";
     background: url(../images/profile-background2.jpg);
-    opacity: 0.5;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 1;
     top: 0;
     left: 0;
     bottom: 0;
