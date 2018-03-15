@@ -237,7 +237,7 @@ function initMap() {
                     method : 'GET'
                 }).then(function(object) {
                     console.log(object)
-                    var listView = $('<div id="lists"><b>Nearby Locations : </b></div>')
+                    var listView = $('<div id="lists"></div>')
                     $('#list').prepend(listView)
                     var resultsLength = object.results.length 
                     for (var i = 0; i < resultsLength; i++) {
