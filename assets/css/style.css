@@ -41,6 +41,8 @@ img {
   background-color: rgba(255, 255, 255, 0.753);
   padding: 20px;
   width: 50%;
+  display: block;
+  margin: auto;
 }
 
 #loginPage {
