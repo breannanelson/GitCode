@@ -197,6 +197,22 @@ img {
     text-align: left;
   }
   
+#contact-section {
+  background-color: rgba(255, 255, 255, 0.747);
+  padding: 20px;
+  text-align: center;
+  text-align: justify;
+}
+  .form-group {
+    display: block;
+    margin: auto;
+    margin-left: 3%;
+  }
+
+  .form {
+    background-color: rgba(255, 255, 255, 0.753);
+  }
+
   .message{
     width: auto;
     margin-bottom: 2px;

@@ -23,12 +23,10 @@
     <div id="loginPage" style="display: none;">
         <div class="jumbotron" id='loginJumbo'>
             <h1 id="title">Co-Code</h1>
+            <p>connect.code.create</p>
             <button id='signInBTN' class="hbtn hb-border-off3">Sign In</button>
-
         </div>
     </div>
-
-
 
     <div class="container" style="display: none;">
         <div class="row">
@@ -46,8 +44,7 @@
 
         <div class="row">
             <div id="main">
-                <!-- <h2>Sidenav Push Example</h2> -->
-                <!-- <p>Click on the element below to open the side navigation menu, and push this content to the right.</p> -->
+                <!-- hamburger menu -->
                 <span class="hamburger" style="font-size:30px;cursor:pointer" id="coolButton" onclick="openNav()">&#9776; </span>
             </div>
         </div>
@@ -55,100 +52,105 @@
         <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
 
 
+        <!-- profile page begins -->
+        <div id="profilePage" style="display: block;">
+            <div id="account-details"></div>
+        </div>
+        <!-- profile page ends -->
 
-            <div id="profilePage" style="display: block;">
-                <div id="account-details"></div>
-            </div>
-
-            <div id="mapSpace" class='pageLinks' style="display: none">
-                <div class="row">
-                    <div class="col-md">
-                        <div class="form">
-                            <div class="text">My Current Location</div>
-                            <br>
-                            <div class="form-group">
-                                <label for="address">Enter Zip Code: </label>
-                                <input type="text" class="form-control" id="address">
-                            </div>
-                            <div class="text">My Info</div>
-                            <br>
-                            <div class="form-group">
-                                <label for="name"> Name :</label>
-                                <input type="text" class="form-control" id="name" placeholder="James">
-                            </div>
-                            <div class="form-group">
-                                <label for="time"> Working Until : </label>
-                                <input type="time" class="form-control" id="time" placeholder="10pm">
-                            </div>
-                            <div class="form-group">
-                                <label for="radius"> Languages : </label>
-                                <input type="text" class="form-control" id="languages" placeholder="Java, Python, C++">
-                            </div>
-                            <div class="form-group">
-                                <label for="radius"> Project Info : </label>
-                                <input type="textbox" class="form-control" id="projInfo" placeholder="Explain the project...">
-                            </div>
-
-                            <button type='submit' value='Encode' id='submitBTN'>Search</button>
+        <!-- map page begins -->
+        <div id="mapSpace" class='pageLinks' style="display: none">
+            <div class="row">
+                <div class="col-md">
+                    <div class="form">
+                        <div class="text">My Current Location</div>
+                        <br>
+                        <div class="form-group">
+                            <label for="address">Enter Zip Code: </label>
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                        <div class="text">My Info</div>
+                        <br>
+                        <div class="form-group">
+                            <label for="name"> Name :</label>
+                            <input type="text" class="form-control" id="name" placeholder="James Bond">
+                        </div>
+                        <div class="form-group">
+                            <label for="time"> Working Until : </label>
+                            <input type="time" class="form-control" id="time" placeholder="10pm">
+                        </div>
+                        <div class="form-group">
+                            <label for="radius"> Languages : </label>
+                            <input type="text" class="form-control" id="languages" placeholder="Java, Python, C++">
+                        </div>
+                        <div class="form-group">
+                            <label for="radius"> Project Info : </label>
+                            <input type="textbox" class="form-control" id="projInfo" placeholder="Explain the project...">
                         </div>
 
+                        <button type='submit' value='Encode' id='submitBTN' class="hbtn hb-border-off3">Search</button>
 
                     </div>
-                    <div class="col-md">
-                        <div id="map"></div>
-                        <div id='convoBox'></div>
-                        <button id="lightMap">Light Map</button>
-                        <button id="darkMap">Dark Map</button>
-                    </div>
+
+
                 </div>
-                <div class="row">
-                    <div id="list"></div>
+                <div class="col-md">
+                    <div id="map"></div>
+                    <div id='convoBox'></div>
+                    <button id="lightMap">Light Map</button>
+                    <button id="darkMap">Dark Map</button>
                 </div>
             </div>
-
-            <div id="jobsPage" class='pageLinks' style="display: none;">
-                <div class="row">
-                    <div class="jumbotron">
-                        <h1>JOB SEARCH</h1>
-                        <br>
-                        <span>Job Title:</span>
-                        <input type="text" id="keyword">
-                        <span>City:</span>
-                        <input type="text" id="city">
-                        <span>State:</span>
-                        <input type="text" id="state">
-                        <br>
-                        <br>
-                        <button class="submit" id='jobSearchBTN'>SUBMIT</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md">
-                        <div class="jobArr"></div>
-                    </div>
-                </div>
-
+            <div class="row">
+                <div id="list"></div>
             </div>
+        </div>
+        <!-- map page ends -->
 
-
-            <div id="messagePage" style="display: none;">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div id="chat-messages-all"></div>
-                        <form>
-                            <input id="chat-input" type="text">
-                            <button id="chat-send">Enter</button>
-                        </form>
-                    </div>
+        <!-- job page begins -->
+        <div id="jobsPage" class='pageLinks' style="display: none;">
+            <div class="row">
+                <div class="jumbotron">
+                    <h1>JOB SEARCH</h1>
+                    <br>
+                    <span>Job Title:</span>
+                    <input type="text" id="keyword">
+                    <span>City:</span>
+                    <input type="text" id="city">
+                    <span>State:</span>
+                    <input type="text" id="state">
+                    <br>
+                    <br>
+                    <button class="submit" id='jobSearchBTN'>SUBMIT</button>
                 </div>
-
             </div>
+            <div class="row">
+                <div class="col-md">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div class="jobArr"></div>
+                </div>
+            </div>
+        </div>
+        <!-- job page ends -->
 
-            <!-- <div id="messagePageLocation" style="display: none;">
+        <!-- message page begins -->
+        <div id="messagePage" style="display: none;">
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="chat-messages-all"></div>
+                    <form>
+                        <input id="chat-input" type="text">
+                        <button id="chat-send">Enter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- message page ends -->
+
+        <!-- <div id="messagePageLocation" style="display: none;">
                     <div class="row">
                         <div class="col-md-8">
                                 <div id="chat-messages-location"></div>
@@ -158,93 +160,90 @@
                                 </form>
                         </div>
                     </div>
-    
                 </div> -->
 
-
-            <div id="contactPage" style="display: none;">
-                    <div class="jumbotron text-center" id="jumbotron">
-                            <h1 align= center >Contact Us</h1><br>
-                            <p>Don't hesitate to contact us for more information or to answer any questions or concerns!</p>
+        <!-- contact page begins -->
+        <div id="contactPage" style="display: none;">
+            <div class="jumbotron text-center" id="jumbotron">
+                <h1 align=c enter>Contact Us</h1>
+                <br>
+                <p>Don't hesitate to contact us for more information or to answer any questions or concerns!</p>
+            </div>
+            <br>
+            <br>
+            <div id="contact-section">
+                <div class="row">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <img src="assets/images/bre-profile-pic.jpg" id="contact-image" class="center">
+                            <h5 class="card-title">Breanna Nelson</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Back-end Development</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Github API & Messaging</h6>
+                            <!-- <p class="card-text">info about project responsibilities</p> -->
+                            <p>Email : breannanelson@gmail.com</p>
+                            <a href="https://github.com/BreannaNelson" class="card-link">Github</a>
                         </div>
-                        <br>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" id="contact-image" class="center">
-                                <div class="panel-heading text-center"><b><font size="5" style="-webkit-text-fill-color: goldenrod;">Breanna Nelson</font></b></div><br>   
-                            </div>
-                                <div class="col-md-3">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" id="contact-image" class="center">
-                                <div class="panel-heading text-center"><b><font size="5" style="-webkit-text-fill-color: goldenrod;">Laura Salcido</font></b></div><br>            
-                            </div>
-                                <div class="col-md-3">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" id="contact-image" class="center">
-                                <div class="panel-heading text-center"><b><font size="5" style="-webkit-text-fill-color: goldenrod;">Reed Chorn</font></b></div><br>    
-                            </div>
-                                <div class="col-md-3">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" id="contact-image" class="center">
-                                <div class="panel-heading text-center"><b><font size="5" style="-webkit-text-fill-color: goldenrod;">Matthew Paulino</font></b></div><br>            
-                            </div>
-                        <div class="row">
-                                <div class="col-md-3">       
-                                    <div class="email">
-                                        <span> Email: </span><a href="breannanelson@gmail.com">breannanelson@gmail.com</a>
-                                        <br>
-                                        <br>
-                                        <span> GitHub: </span><a href="https://github.com/BreannaNelson">https://github.com/BreannaNelson</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3"> 
-                                    <div class="email">
-                                        <span> Email: </span><a href="laurasalcido@gmail.com">aurasalcido@gmail.com</a>
-                                        <br>
-                                        <br>
-                                        <span> GitHub: </span><a href="https://github.com/LauraSalcido">https://github.com/LauraSalcido</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3"> 
-                                    <div class="email">
-                                        <span> Email: </span><a href="reedchorn@gmail.com">reedchorn@gmail.com</a>
-                                        <br>
-                                        <br>
-                                        <span> GitHub: </span><a href="https://github.com/ReedChorn">https://github.com/ReedChorn</a>      
-                                    </div>
-                                </div>
-                                <div class="col-md-3"> 
-                                    <div class="email">
-                                        <span> Email: </span><a href="matthewpaulino@gmail.com">matthewpaulino@gmail.com</a> 
-                                        <br>
-                                        <br>
-                                        <span> GitHub: </span><a href="https://github.com/MatthewPaulino">https://github.com/MatthewPaulino</a>
-                                    </div>         
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <p class="about">About This Project:<br>
-                                    CoCode gives developers a means to find a productive environment to work on projects & create meeting spaces for other developers to converge on projects or to just work with others with similar interests.  
-                
-                                    CoCode also allows connection with other users through chat and job search to expand their networks and to collaborate on ambitious projects.  </p>
-                            </div>
                     </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <img src="assets/images/laura-profile-pic.png" id="contact-image" class="center">
+                            <h5 class="card-title">Laura Salcido</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Back-end Development</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Google Maps API & Authentic Jobs API</h6>
+                            <!-- <p class="card-text">info about project responsibilities</p> -->
+                            <p>Email : elzeeandtheweb@gmail.com</p>
+                            <a href="https://github.com/Lauras5" class="card-link">Github</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <img src="assets/images/reed-profile-pic.jpg" id="contact-image" class="center">
+                            <h5 class="card-title">Reed Chorn</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Front-end Development</h6>
+                            <!-- <h6 class="card-subtitle mb-2 text-muted"></h6> -->
+                            <!-- <p class="card-text">info about project responsibilities</p> -->
+                            <p>Email : reedchorn@gmail.com</p>
+                            <a href="https://github.com/ReedChorn" class="card-link">Github</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <img src="#" id="contact-image" class="center">
+                            <h5 class="card-title">Matthew Paulino</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Front-end Development</h6>
+                            <!-- <h6 class="card-subtitle mb-2 text-muted"></h6> -->
+                            <!-- <p class="card-text">info about project responsibilities</p> -->
+                            <p>Email : matthewpaulino@gmail.com</p>
+                            <a href="https://github.com/MatthewPaulino" class="card-link">Github</a>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <p class="about">About This Project:
+                            <br> CoCode gives developers a means to find a productive environment to work on projects & create
+                            meeting spaces for other developers to converge on projects or to just work with others with
+                            similar interests. CoCode also allows connection with other users through chat and job search
+                            to expand their networks and to collaborate on ambitious projects. </p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
 
 
 
-        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
-        <!-- MomentJS -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOASDIikd8pGiO3vLaVh4bhuhpOr3ZAQY&callback=initMap" async
-            defer></script>
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <script src="./assets/javascript/script.js"></script>
-        <script src="./assets/javascript/messaging.js"></script>
-        <script src="./assets/javascript/javascript-switch-markers.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <!-- MomentJS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOASDIikd8pGiO3vLaVh4bhuhpOr3ZAQY&callback=initMap" async
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="./assets/javascript/script.js"></script>
+    <script src="./assets/javascript/messaging.js"></script>
+    <script src="./assets/javascript/javascript-switch-markers.js"></script>
 </body>
 
 </html>
