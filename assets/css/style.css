@@ -31,6 +31,8 @@ body {
 
 #title {
     color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-family: 'Coda Caption', sans-serif;
     position: absolute;
     top: 40%;
     left: 50%;
