@@ -88,13 +88,20 @@ img {
 
 
 #profilePage::after, #mapSpace::after, #jobsPage::after, #messagePage::after, #contentPage::after {
+    width:100%;
+    height: 100%;
     content: "";
     background: url(../images/profile-background2.jpg);
     background-size: cover;
     background-attachment: fixed;
     opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     position: absolute;
     z-index: -1;   
+    color: #fff;
 }
 
 
@@ -109,7 +116,8 @@ img {
     height: 500px;
     width: 750px;
     margin: 20px;
-    border: 6px solid white;
+    background-color:rgba(255, 255, 255, 0.76);
+    padding: 20px;
   }
   
   .jumbotron {
@@ -184,32 +192,31 @@ img {
     border-radius: 1000px;
   }
   
- p {
-   width: 480px;
-   text-align: left;
- }
+  p {
+    width: 480px;
+    text-align: left;
+  }
   
-.text {
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    text-align: center;
-}    
-    
- .form-group {
-   display: block;
-   margin: auto;
- }
+#contact-section {
+  background-color: rgba(255, 255, 255, 0.747);
+  padding: 20px;
+  text-align: center;
+  text-align: justify;
+}
+  .form-group {
+    display: block;
+    margin: auto;
+    margin-left: 3%;
+  }
 
   .form {
     background-color: rgba(255, 255, 255, 0.753);
-    padding: 15px;
   }
 
   .message{
     width: auto;
     margin-bottom: 2px;
   }
-
   .message-inner {
     display: inline-block;
     padding: 8px 16px;
