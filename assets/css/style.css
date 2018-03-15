@@ -112,6 +112,11 @@ img {
   color: #fff;
 }
 
+#chat-input {
+  width: 100%;
+  line-height: 30px;
+}
+
 #chat-send {
   background-color:#0000007d;
   padding: 10px;
