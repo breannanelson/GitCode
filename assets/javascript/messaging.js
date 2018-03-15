@@ -29,5 +29,7 @@ $("#chat-send").on("click", function (event) {
 
 chatData.on("child_added", function (snapshot) {
     var msg = snapshot.val();
-    $("#chat-messages").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
+    $("#chat-messages-all").append(msg.displayName + " :  " + msg.message + "  | " + moment(msg.time).format("hh:mm") + "<br>")
 });
+
+
